@@ -9,6 +9,7 @@
 #import "APIClient.h"
 #import "Macros.h"
 #import "Place+Create.h"
+#import "AppDelegate.h"
 
 static NSString *const GetLocationsURLPath = @"https://gist.githubusercontent.com/shreyansb/678d35d7efaa4cbfb81d/raw/7e04c3d88f6c06d7a794ae570f39a96107b18457/gistfile1.json";
 
@@ -49,17 +50,8 @@ static NSString *const GetLocationsURLPath = @"https://gist.githubusercontent.co
         
         DLog(@"Request URL: %@", operation.request.URL);
         
-        // This context is causing crash
-        NSManagedObjectContext* context = [[NSManagedObjectContext alloc]
-                                           initWithConcurrencyType:NSPrivateQueueConcurrencyType];
-        
-        NSMutableArray *places = [NSMutableArray new];
-        
-        // Parse the API call results
-        for (NSDictionary *singleLocation in responseObject) {
-            Place *newPlace = [Place placeWithInfo:singleLocation inManagedObjectContext:context];
-            [places addObject:newPlace];
-        }
+        AppDelegate *delegate = [[UIApplication sharedApplication] delegate];        
+        NSArray *places = [Place placesWithDataArray:responseObject inManagedObjectContext:delegate.managedObjectContext];
         
         [self propagateResponse:@{@"places": places} error:nil withBlock:completionBlock];
         

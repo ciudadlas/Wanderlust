@@ -8,7 +8,6 @@
 
 #import "Place+Create.h"
 #import "Macros.h"
-#import "AppDelegate.h"
 
 @implementation Place (Create)
 
@@ -23,18 +22,10 @@
     NSNumber *latitude = [NSNumber numberWithFloat:[[infoDictionary objectForKey:@"latitude"] floatValue]];
     NSNumber *longitude = [NSNumber numberWithFloat:[[infoDictionary objectForKey:@"longitude"] floatValue]];
     
-    // Here check if id already exists
-//    item = [Place find  MR_findFirstByAttribute:@"placeID" withValue:itemID];
-//    
-//    if (!item) {
-//        item = [SKComment MR_createEntity];
-//        item.commentID = itemID;
-//    }
-    
-    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    // Here check if id already exists in Core Data before saving
     
     if (placeID && title && imagePath && address && latitude && longitude) {
-        item = [NSEntityDescription insertNewObjectForEntityForName:@"Place" inManagedObjectContext:delegate.managedObjectContext];
+        item = [NSEntityDescription insertNewObjectForEntityForName:@"Place" inManagedObjectContext:context];
         item.placeID = placeID;
         item.title = title;
         item.address = address;
@@ -51,9 +42,19 @@
         }
     }
     
-//    NSLog(@"item: %@", item);
-    
     return item;    
+}
+
++ (NSArray *)placesWithDataArray:(NSArray *)placesArray inManagedObjectContext:(NSManagedObjectContext *)context {
+    
+    NSMutableArray *places = [NSMutableArray new];
+    
+    for (NSDictionary *singleLocation in placesArray) {
+        Place *newPlace = [Place placeWithInfo:singleLocation inManagedObjectContext:context];
+        [places addObject:newPlace];
+    }
+    
+    return [NSArray arrayWithArray:places];
 }
 
 @end
