@@ -27,6 +27,7 @@
 
 @interface PannableCardView : UIView
 
+@property (strong, nonatomic) UIImageView *imageView;
 @property (weak, nonatomic) id <PannableCardViewDelegate> delegate;
 
 @end

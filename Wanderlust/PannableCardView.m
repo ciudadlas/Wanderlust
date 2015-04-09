@@ -21,7 +21,6 @@ static CGFloat const RotationAngle = M_PI/8;      // Higher = stronger rotation 
 @interface PannableCardView()
 
 @property (strong, nonatomic) UIGestureRecognizer *panGestureRecognizer;
-@property (strong, nonatomic) UIImageView *imageView;
 @property (nonatomic) CGPoint originalCenter;
 @property (nonatomic) CGFloat xFromCenter;
 @property (nonatomic) CGFloat yFromCenter;
@@ -46,7 +45,6 @@ static CGFloat const RotationAngle = M_PI/8;      // Higher = stronger rotation 
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    self.imageView.image = [UIImage imageNamed:@"cat"];
     self.imageView.contentMode = UIViewContentModeScaleAspectFill;
     self.imageView.frame = self.bounds;
     self.imageView.clipsToBounds = true;

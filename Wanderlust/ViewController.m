@@ -39,6 +39,7 @@
 
 - (PannableCardView *)nextCardViewToShow:(CardsStackView *)stackView {
     PannableCardView *newCardView = [[PannableCardView alloc] initWithFrame:stackView.bounds];
+    newCardView.imageView.image = [UIImage imageNamed:@"cat"];
     newCardView.delegate = stackView;
     
     return newCardView;
