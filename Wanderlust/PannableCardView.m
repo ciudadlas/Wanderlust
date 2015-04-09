@@ -47,18 +47,18 @@ static CGFloat const RotationAngle = M_PI/8;      // Higher = stronger rotation 
     
     self.imageView.contentMode = UIViewContentModeScaleAspectFill;
     self.imageView.frame = self.bounds;
-    self.imageView.clipsToBounds = true;
+    self.imageView.clipsToBounds = YES;
 }
 
 #pragma mark - View Setup Methods
 
 - (void)setupView {
-    self.layer.cornerRadius = 6;
+    self.layer.cornerRadius = 15;
     self.layer.shadowRadius = 3;
     self.layer.shadowOpacity = 0.2;
     self.layer.shadowOffset = CGSizeMake(1, 1);
-    self.layer.borderColor = HEXCOLOR(0x232323).CGColor;
-    self.layer.borderWidth = 3;
+    self.layer.borderColor = HEXCOLOR(0xFFFFFF).CGColor;
+    self.layer.borderWidth = 5;
     self.layer.allowsEdgeAntialiasing = YES;
     
     self.backgroundColor = [UIColor clearColor];
@@ -82,8 +82,8 @@ static CGFloat const RotationAngle = M_PI/8;      // Higher = stronger rotation 
 - (void)handlePan:(UIPanGestureRecognizer *)gestureRecognizer {
     
     // Extract the coordinate data from the swipe movement. (i.e. How much did the user move?)
-    self.xFromCenter = [gestureRecognizer translationInView:self].x; // This value is positive for right swipe, negative for left swipe
-    self.yFromCenter = [gestureRecognizer translationInView:self].y; // This value is positive for upwards swipe, negative for downwards pan
+    self.xFromCenter = [gestureRecognizer translationInView:self].x; // This value is positive for right pan, negative for left pan
+    self.yFromCenter = [gestureRecognizer translationInView:self].y; // This value is positive for upwards pan, negative for downwards pan
     
     switch (gestureRecognizer.state) {
         case UIGestureRecognizerStateBegan:
