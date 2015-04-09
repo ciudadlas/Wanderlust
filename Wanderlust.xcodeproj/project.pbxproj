@@ -10,7 +10,7 @@
 		752200191AD5FE4300FAFFE4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 752200181AD5FE4300FAFFE4 /* main.m */; };
 		7522001C1AD5FE4300FAFFE4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7522001B1AD5FE4300FAFFE4 /* AppDelegate.m */; };
 		7522001F1AD5FE4300FAFFE4 /* Wanderlust.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7522001D1AD5FE4300FAFFE4 /* Wanderlust.xcdatamodeld */; };
-		752200221AD5FE4300FAFFE4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752200211AD5FE4300FAFFE4 /* ViewController.m */; };
+		752200221AD5FE4300FAFFE4 /* PlacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752200211AD5FE4300FAFFE4 /* PlacesViewController.m */; };
 		752200251AD5FE4300FAFFE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752200231AD5FE4300FAFFE4 /* Main.storyboard */; };
 		752200271AD5FE4300FAFFE4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 752200261AD5FE4300FAFFE4 /* Images.xcassets */; };
 		7522002A1AD5FE4300FAFFE4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 752200281AD5FE4300FAFFE4 /* LaunchScreen.xib */; };
@@ -42,8 +42,8 @@
 		7522001A1AD5FE4300FAFFE4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7522001B1AD5FE4300FAFFE4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7522001E1AD5FE4300FAFFE4 /* Wanderlust.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wanderlust.xcdatamodel; sourceTree = "<group>"; };
-		752200201AD5FE4300FAFFE4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		752200211AD5FE4300FAFFE4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		752200201AD5FE4300FAFFE4 /* PlacesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlacesViewController.h; sourceTree = "<group>"; };
+		752200211AD5FE4300FAFFE4 /* PlacesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlacesViewController.m; sourceTree = "<group>"; };
 		752200241AD5FE4300FAFFE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		752200261AD5FE4300FAFFE4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		752200291AD5FE4300FAFFE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -120,8 +120,8 @@
 			children = (
 				7522001A1AD5FE4300FAFFE4 /* AppDelegate.h */,
 				7522001B1AD5FE4300FAFFE4 /* AppDelegate.m */,
-				752200201AD5FE4300FAFFE4 /* ViewController.h */,
-				752200211AD5FE4300FAFFE4 /* ViewController.m */,
+				752200201AD5FE4300FAFFE4 /* PlacesViewController.h */,
+				752200211AD5FE4300FAFFE4 /* PlacesViewController.m */,
 				752200461AD638A700FAFFE4 /* Cards Stack View */,
 				752200471AD6393B00FAFFE4 /* Data Layer */,
 				752200451AD6048B00FAFFE4 /* Macros.h */,
@@ -351,7 +351,7 @@
 				7522001C1AD5FE4300FAFFE4 /* AppDelegate.m in Sources */,
 				752200191AD5FE4300FAFFE4 /* main.m in Sources */,
 				75B7F2401AD65BFF000E1640 /* Place+Read.m in Sources */,
-				752200221AD5FE4300FAFFE4 /* ViewController.m in Sources */,
+				752200221AD5FE4300FAFFE4 /* PlacesViewController.m in Sources */,
 				7522001F1AD5FE4300FAFFE4 /* Wanderlust.xcdatamodeld in Sources */,
 				752200531AD6484800FAFFE4 /* Place+Create.m in Sources */,
 				7522004E1AD63EF900FAFFE4 /* APIClient.m in Sources */,

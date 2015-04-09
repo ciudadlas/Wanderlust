@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CardsStackView.h"
 
-@interface ViewController : UIViewController <CardsStackViewDelegate, CardsStackViewDataSource>
+@interface PlacesViewController : UIViewController <CardsStackViewDelegate, CardsStackViewDataSource>
 
 @end
 

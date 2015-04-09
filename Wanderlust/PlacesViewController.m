@@ -6,21 +6,21 @@
 //  Copyright (c) 2015 Serdar Karatekin. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "PlacesViewController.h"
 #import "APIClient.h"
 #import "Macros.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <UIImageView+AFNetworking.h>
 #import "Place+Read.h"
 
-@interface ViewController ()
+@interface PlacesViewController ()
 
 @property (weak, nonatomic) IBOutlet CardsStackView *cardsStack;
 @property (strong, nonatomic) NSArray *places;
 
 @end
 
-@implementation ViewController
+@implementation PlacesViewController
 
 #pragma mark - View Lifecycle
 
