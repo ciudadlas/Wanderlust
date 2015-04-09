@@ -34,6 +34,10 @@
     
     self.cardsStack.delegate = self;
     self.cardsStack.dataSource = self;
+    
+    // We don't want any text to show while items are loading
+    self.placeAddress.text = @"";
+    self.placeName.text = @"";
 }
 
 - (void)viewDidAppear:(BOOL)animated {
