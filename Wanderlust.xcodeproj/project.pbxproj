@@ -94,15 +94,12 @@
 				7522001B1AD5FE4300FAFFE4 /* AppDelegate.m */,
 				752200201AD5FE4300FAFFE4 /* ViewController.h */,
 				752200211AD5FE4300FAFFE4 /* ViewController.m */,
-				7522003F1AD5FF3300FAFFE4 /* CardsStackView.h */,
-				752200401AD5FF3300FAFFE4 /* CardsStackView.m */,
-				752200421AD5FF6200FAFFE4 /* PannableCardView.h */,
-				752200431AD5FF6200FAFFE4 /* PannableCardView.m */,
+				752200461AD638A700FAFFE4 /* Cards Stack View */,
+				752200471AD6393B00FAFFE4 /* Data Layer */,
 				752200451AD6048B00FAFFE4 /* Macros.h */,
 				752200231AD5FE4300FAFFE4 /* Main.storyboard */,
 				752200261AD5FE4300FAFFE4 /* Images.xcassets */,
 				752200281AD5FE4300FAFFE4 /* LaunchScreen.xib */,
-				7522001D1AD5FE4300FAFFE4 /* Wanderlust.xcdatamodeld */,
 				752200161AD5FE4300FAFFE4 /* Supporting Files */,
 			);
 			path = Wanderlust;
@@ -132,6 +129,25 @@
 				752200341AD5FE4300FAFFE4 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		752200461AD638A700FAFFE4 /* Cards Stack View */ = {
+			isa = PBXGroup;
+			children = (
+				7522003F1AD5FF3300FAFFE4 /* CardsStackView.h */,
+				752200401AD5FF3300FAFFE4 /* CardsStackView.m */,
+				752200421AD5FF6200FAFFE4 /* PannableCardView.h */,
+				752200431AD5FF6200FAFFE4 /* PannableCardView.m */,
+			);
+			name = "Cards Stack View";
+			sourceTree = "<group>";
+		};
+		752200471AD6393B00FAFFE4 /* Data Layer */ = {
+			isa = PBXGroup;
+			children = (
+				7522001D1AD5FE4300FAFFE4 /* Wanderlust.xcdatamodeld */,
+			);
+			name = "Data Layer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
