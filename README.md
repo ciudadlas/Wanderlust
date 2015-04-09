@@ -4,4 +4,4 @@
 
 ## Features
 
-## Future Enhancements To Consider
+## Future enhancements to consider
