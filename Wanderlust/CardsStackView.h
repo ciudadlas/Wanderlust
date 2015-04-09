@@ -40,6 +40,12 @@
  */
 - (void)cardViewSwipedRight:(CardsStackView *)stackView cardView:(PannableCardView *)cardView;
 
+/**
+ * Delegate method that is called when a card view is appears at the top of the stack
+ */
+- (void)cardViewDidAppearOnTopOfStack:(CardsStackView *)stackView cardView:(PannableCardView *)cardView;
+
+
 @end
 
 @interface CardsStackView : UIView <PannableCardViewDelegate>

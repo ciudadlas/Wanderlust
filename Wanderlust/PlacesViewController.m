@@ -16,6 +16,9 @@
 @interface PlacesViewController ()
 
 @property (weak, nonatomic) IBOutlet CardsStackView *cardsStack;
+@property (weak, nonatomic) IBOutlet UILabel *placeName;
+@property (weak, nonatomic) IBOutlet UILabel *placeAddress;
+
 @property (strong, nonatomic) NSArray *places;
 
 @end
@@ -26,7 +29,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    [self setupView];
     
     self.cardsStack.delegate = self;
     self.cardsStack.dataSource = self;
@@ -41,6 +45,18 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - View Setup
+
+- (void)setupView {
+    self.placeName.numberOfLines = 2;
+    self.placeName.minimumScaleFactor = 8.0 / self.placeName.font.pointSize;
+    self.placeName.adjustsFontSizeToFitWidth = YES;
+    
+    self.placeAddress.numberOfLines = 1;
+    self.placeAddress.minimumScaleFactor = 8.0 / self.placeName.font.pointSize;
+    self.placeAddress.adjustsFontSizeToFitWidth = YES;
 }
 
 #pragma mark - Get Data Helper Methods
@@ -99,6 +115,7 @@
 - (PannableCardView *)nextCardViewToShow:(CardsStackView *)stackView {
     NSUInteger randomIndex = arc4random() % [self.places count];
     Place *randomPlace = [self.places objectAtIndex:randomIndex];
+    NSLog(@"Random place %@", randomPlace.title);
     
     PannableCardView *newCardView = [[PannableCardView alloc] initWithFrame:stackView.bounds];
     newCardView.delegate = stackView;
@@ -110,6 +127,14 @@
 }
 
 #pragma mark - CardsStackViewDelegate Methods
+
+- (void)cardViewDidAppearOnTopOfStack:(CardsStackView *)stackView cardView:(PannableCardView *)cardView {
+    int tag = (int)cardView.tag;
+    Place *place = [self.places objectAtIndex:tag];
+
+    self.placeName.text = place.title;
+    self.placeAddress.text = place.address;
+}
 
 - (void)cardViewSwipedLeft:(CardsStackView *)stackView cardView:(PannableCardView *)cardView {
     NSLog(@"Card view swiped left");

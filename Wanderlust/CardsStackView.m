@@ -27,6 +27,7 @@
     }
     
     [self addCardView];
+    [self findViewOnTop];
 }
 
 - (void)cardSwipedLeft:(PannableCardView *)view {
@@ -37,6 +38,7 @@
     }
     
     [self addCardView];
+    [self findViewOnTop];
 }
 
 #pragma mark - Helper Methods
@@ -52,6 +54,14 @@
     [self debugPrintNumberOfViewsOnStack];
 }
 
+- (void)findViewOnTop {
+    PannableCardView *topCardView = [self.subviews lastObject];
+    
+    if ([self.delegate respondsToSelector:@selector(cardViewDidAppearOnTopOfStack:cardView:)]) {
+        [self.delegate cardViewDidAppearOnTopOfStack:self cardView:topCardView];
+    }
+}
+
 - (void)reload {
 
     NSInteger numberOfCardsOnStack;
@@ -65,6 +75,8 @@
     for (int i = 0; i < numberOfCardsOnStack; i++) {
         [self addCardView];
     }
+    
+    [self findViewOnTop];
 }
 
 #pragma mark - Debug Methods
