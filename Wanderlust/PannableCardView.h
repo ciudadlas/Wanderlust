@@ -16,17 +16,17 @@
 /**
  * Delegate method that is called when a card view is swiped left
  */
-- (void)cardSwipedLeft:(PannableCardView *)view;
+- (void)cardViewSwipedLeft:(PannableCardView *)view;
 
 /**
  * Delegate method that is called when a card view is swiped right
  */
-- (void)cardSwipedRight:(PannableCardView *)view;
+- (void)cardViewSwipedRight:(PannableCardView *)view;
 
 /**
  * Delegate method that is called when a card is tapped once
  */
-- (void)tappedCard:(PannableCardView *)view;
+- (void)tappedCardView:(PannableCardView *)view;
 
 
 @end

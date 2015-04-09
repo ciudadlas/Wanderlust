@@ -110,8 +110,8 @@ static CGFloat const RotationAngle = M_PI/8;      // Higher value means stronger
 }
 
 - (void)handleTap:(UITapGestureRecognizer *)gestureRecognizer {
-    if ([self.delegate respondsToSelector:@selector(tappedCard:)]) {
-        [self.delegate tappedCard:self];
+    if ([self.delegate respondsToSelector:@selector(tappedCardView:)]) {
+        [self.delegate tappedCardView:self];
     }
 }
 
@@ -164,8 +164,8 @@ static CGFloat const RotationAngle = M_PI/8;      // Higher value means stronger
         self.center = finishPoint;
     } completion:^(BOOL finished) {
         // Call delegate
-        if ([self.delegate respondsToSelector:@selector(cardSwipedRight:)]) {
-            [self.delegate cardSwipedRight:self];
+        if ([self.delegate respondsToSelector:@selector(cardViewSwipedRight:)]) {
+            [self.delegate cardViewSwipedRight:self];
         }
         
         [self resetView];
@@ -182,8 +182,8 @@ static CGFloat const RotationAngle = M_PI/8;      // Higher value means stronger
     } completion:^(BOOL finished) {
 
         // Call delegate
-        if ([self.delegate respondsToSelector:@selector(cardSwipedLeft:)]) {
-            [self.delegate cardSwipedLeft:self];
+        if ([self.delegate respondsToSelector:@selector(cardViewSwipedLeft:)]) {
+            [self.delegate cardViewSwipedLeft:self];
         }
         
         [self resetView];

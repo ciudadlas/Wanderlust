@@ -19,7 +19,7 @@
 
 #pragma mark - PannableCardViewDelegate Methods
 
-- (void)cardSwipedRight:(PannableCardView *)view {
+- (void)cardViewSwipedRight:(PannableCardView *)view {
     [view removeFromSuperview];
     
     if ([self.delegate respondsToSelector:@selector(stackView:didSwipeCardViewRight:)]) {
@@ -30,7 +30,7 @@
     [self findViewOnTop];
 }
 
-- (void)cardSwipedLeft:(PannableCardView *)view {
+- (void)cardViewSwipedLeft:(PannableCardView *)view {
     [view removeFromSuperview];
     
     if ([self.delegate respondsToSelector:@selector(stackView:didSwipeCardViewLeft:)]) {
@@ -41,7 +41,7 @@
     [self findViewOnTop];
 }
 
-- (void)tappedCard:(PannableCardView *)view {
+- (void)tappedCardView:(PannableCardView *)view {
     if ([self.delegate respondsToSelector:@selector(stackView:didTapOnCardView:)]) {
         [self.delegate stackView:self didTapOnCardView:view];
     }
