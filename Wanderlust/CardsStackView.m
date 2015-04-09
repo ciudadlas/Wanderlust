@@ -41,6 +41,12 @@
     [self findViewOnTop];
 }
 
+- (void)tappedCard:(PannableCardView *)view {
+    if ([self.delegate respondsToSelector:@selector(stackView:didTapCardView:)]) {
+        [self.delegate stackView:self didTapCardView:view];
+    }
+}
+
 #pragma mark - Helper Methods
 
 - (void)addCardView {

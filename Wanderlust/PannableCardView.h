@@ -23,6 +23,12 @@
  */
 - (void)cardSwipedRight:(PannableCardView *)view;
 
+/**
+ * Delegate method that is called after a card is tapped once
+ */
+- (void)tappedCard:(PannableCardView *)view;
+
+
 @end
 
 @interface PannableCardView : UIView

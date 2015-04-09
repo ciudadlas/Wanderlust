@@ -21,6 +21,7 @@ static CGFloat const RotationAngle = M_PI/8;      // Higher value means stronger
 @interface PannableCardView()
 
 @property (strong, nonatomic) UIGestureRecognizer *panGestureRecognizer;
+@property (strong, nonatomic) UITapGestureRecognizer *tapGestureRecognizer;
 @property (nonatomic) CGPoint originalCenter;
 @property (nonatomic) CGFloat xFromCenter;
 @property (nonatomic) CGFloat yFromCenter;
@@ -71,6 +72,10 @@ static CGFloat const RotationAngle = M_PI/8;      // Higher value means stronger
 - (void)setupGestureRecognizers {
     self.panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
     [self addGestureRecognizer:self.panGestureRecognizer];
+    
+    self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    self.tapGestureRecognizer.numberOfTapsRequired = 1;
+    [self addGestureRecognizer:self.tapGestureRecognizer];
 }
 
 - (void)resetView {
@@ -101,6 +106,12 @@ static CGFloat const RotationAngle = M_PI/8;      // Higher value means stronger
             
         default:
             break;
+    }
+}
+
+- (void)handleTap:(UITapGestureRecognizer *)gestureRecognizer {
+    if ([self.delegate respondsToSelector:@selector(tappedCard:)]) {
+        [self.delegate tappedCard:self];
     }
 }
 

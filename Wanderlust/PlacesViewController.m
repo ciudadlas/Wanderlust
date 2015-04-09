@@ -12,10 +12,12 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <UIImageView+AFNetworking.h>
 #import "Place+Read.h"
+#import "MapViewController.h"
 
 @interface PlacesViewController ()
 
 @property (weak, nonatomic) IBOutlet CardsStackView *cardsStack;
+@property (weak, nonatomic) PannableCardView *cardOnTop;
 @property (weak, nonatomic) IBOutlet UILabel *placeName;
 @property (weak, nonatomic) IBOutlet UILabel *placeAddress;
 
@@ -35,7 +37,7 @@
     self.cardsStack.delegate = self;
     self.cardsStack.dataSource = self;
     
-    // We don't want any text to show while items are loading
+    // Don't show any text while items are loading
     self.placeAddress.text = @"";
     self.placeName.text = @"";
 }
@@ -43,7 +45,9 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [self getLocations];
+    if (!self.places) {
+        [self getPlaces];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,7 +69,7 @@
 
 #pragma mark - Get Data Helper Methods
 
-- (void)getLocations {
+- (void)getPlaces {
     
     [SVProgressHUD showWithStatus:@"Loading places..."];
     
@@ -138,6 +142,11 @@
 
     self.placeName.text = place.title;
     self.placeAddress.text = place.address;
+    self.cardOnTop = cardView;
+}
+
+- (void)stackView:(CardsStackView *)stackView didTapCardView:(PannableCardView *)cardView {
+    [self performSegueWithIdentifier:@"MapViewControllerSegue" sender:self];
 }
 
 - (void)cardViewSwipedLeft:(CardsStackView *)stackView cardView:(PannableCardView *)cardView {
@@ -146,6 +155,18 @@
 
 - (void)cardViewSwipedRight:(CardsStackView *)stackView cardView:(PannableCardView *)cardView {
     NSLog(@"Card view swiped right");
+}
+
+#pragma mark - View Controller Transition
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"MapViewControllerSegue"]) {
+
+        MapViewController *mapVC = [segue destinationViewController];
+        Place *place = [self.places objectAtIndex:self.cardOnTop.tag];
+        mapVC.place = place;
+    }
 }
 
 @end

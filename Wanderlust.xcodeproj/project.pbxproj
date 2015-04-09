@@ -21,6 +21,7 @@
 		7522004E1AD63EF900FAFFE4 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7522004D1AD63EF900FAFFE4 /* APIClient.m */; };
 		752200531AD6484800FAFFE4 /* Place+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 752200521AD6484800FAFFE4 /* Place+Create.m */; };
 		75B7F2401AD65BFF000E1640 /* Place+Read.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B7F23F1AD65BFF000E1640 /* Place+Read.m */; };
+		75B7F2461AD672B3000E1640 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B7F2451AD672B3000E1640 /* MapViewController.m */; };
 		BB7D457147CF472CE6F077F5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE1E2AED0A5C6B0298458A3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,8 @@
 		752200521AD6484800FAFFE4 /* Place+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Place+Create.m"; sourceTree = "<group>"; };
 		75B7F23E1AD65BFF000E1640 /* Place+Read.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Place+Read.h"; sourceTree = "<group>"; };
 		75B7F23F1AD65BFF000E1640 /* Place+Read.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Place+Read.m"; sourceTree = "<group>"; };
+		75B7F2441AD672B3000E1640 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		75B7F2451AD672B3000E1640 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		8FE1E2AED0A5C6B0298458A3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B540DEABE2458D21389C0A1E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +125,8 @@
 				7522001B1AD5FE4300FAFFE4 /* AppDelegate.m */,
 				752200201AD5FE4300FAFFE4 /* PlacesViewController.h */,
 				752200211AD5FE4300FAFFE4 /* PlacesViewController.m */,
+				75B7F2441AD672B3000E1640 /* MapViewController.h */,
+				75B7F2451AD672B3000E1640 /* MapViewController.m */,
 				752200461AD638A700FAFFE4 /* Cards Stack View */,
 				752200471AD6393B00FAFFE4 /* Data Layer */,
 				752200451AD6048B00FAFFE4 /* Macros.h */,
@@ -355,6 +360,7 @@
 				7522001F1AD5FE4300FAFFE4 /* Wanderlust.xcdatamodeld in Sources */,
 				752200531AD6484800FAFFE4 /* Place+Create.m in Sources */,
 				7522004E1AD63EF900FAFFE4 /* APIClient.m in Sources */,
+				75B7F2461AD672B3000E1640 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -60,10 +60,60 @@
                         <outlet property="cardsStack" destination="NNq-WQ-dSt" id="ZRa-3s-2IF"/>
                         <outlet property="placeAddress" destination="aDy-5q-zPh" id="Bxx-iV-P57"/>
                         <outlet property="placeName" destination="m5Q-9I-yqP" id="LCK-8R-nr0"/>
+                        <segue destination="AUd-tD-Uck" kind="presentation" identifier="MapViewControllerSegue" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="jDE-gy-dRU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="367" y="406"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="N39-FE-gxR">
+            <objects>
+                <viewController id="AUd-tD-Uck" customClass="MapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4Fs-7v-qUL"/>
+                        <viewControllerLayoutGuide type="bottom" id="1FY-F4-V9Q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fMN-D7-4B5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="97c-m6-LcO">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8WY-tI-sI6">
+                                <rect key="frame" x="526" y="28" width="58" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="faN-vm-5uQ"/>
+                                    <constraint firstAttribute="width" constant="58" id="gaV-hM-bDL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="X">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedCloseButton:" destination="AUd-tD-Uck" eventType="touchUpInside" id="MY1-cm-PbV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="97c-m6-LcO" firstAttribute="top" secondItem="fMN-D7-4B5" secondAttribute="top" id="5dH-Nb-I9t"/>
+                            <constraint firstItem="1FY-F4-V9Q" firstAttribute="top" secondItem="97c-m6-LcO" secondAttribute="bottom" id="c16-Xg-KHN"/>
+                            <constraint firstAttribute="trailing" secondItem="97c-m6-LcO" secondAttribute="trailing" id="cHD-xd-VJp"/>
+                            <constraint firstItem="8WY-tI-sI6" firstAttribute="top" secondItem="4Fs-7v-qUL" secondAttribute="bottom" constant="8" id="kJc-I3-l4j"/>
+                            <constraint firstItem="97c-m6-LcO" firstAttribute="leading" secondItem="fMN-D7-4B5" secondAttribute="leading" id="rOn-r0-36U"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8WY-tI-sI6" secondAttribute="trailing" id="zQp-DO-Xfl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="97c-m6-LcO" id="k7i-vC-fqs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NfL-Ko-3TR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1040" y="426"/>
         </scene>
     </scenes>
 </document>
