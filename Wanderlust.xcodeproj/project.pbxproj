@@ -19,6 +19,8 @@
 		752200441AD5FF6200FAFFE4 /* PannableCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 752200431AD5FF6200FAFFE4 /* PannableCardView.m */; };
 		7522004A1AD63B7800FAFFE4 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 752200491AD63B7800FAFFE4 /* Place.m */; };
 		7522004E1AD63EF900FAFFE4 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7522004D1AD63EF900FAFFE4 /* APIClient.m */; };
+		752200531AD6484800FAFFE4 /* Place+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 752200521AD6484800FAFFE4 /* Place+Create.m */; };
+		75B7F2401AD65BFF000E1640 /* Place+Read.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B7F23F1AD65BFF000E1640 /* Place+Read.m */; };
 		BB7D457147CF472CE6F077F5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE1E2AED0A5C6B0298458A3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,10 @@
 		752200491AD63B7800FAFFE4 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
 		7522004C1AD63EF900FAFFE4 /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
 		7522004D1AD63EF900FAFFE4 /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
+		752200511AD6484800FAFFE4 /* Place+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Place+Create.h"; sourceTree = "<group>"; };
+		752200521AD6484800FAFFE4 /* Place+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Place+Create.m"; sourceTree = "<group>"; };
+		75B7F23E1AD65BFF000E1640 /* Place+Read.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Place+Read.h"; sourceTree = "<group>"; };
+		75B7F23F1AD65BFF000E1640 /* Place+Read.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Place+Read.m"; sourceTree = "<group>"; };
 		8FE1E2AED0A5C6B0298458A3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B540DEABE2458D21389C0A1E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,6 +192,10 @@
 			isa = PBXGroup;
 			children = (
 				7522001D1AD5FE4300FAFFE4 /* Wanderlust.xcdatamodeld */,
+				752200511AD6484800FAFFE4 /* Place+Create.h */,
+				752200521AD6484800FAFFE4 /* Place+Create.m */,
+				75B7F23E1AD65BFF000E1640 /* Place+Read.h */,
+				75B7F23F1AD65BFF000E1640 /* Place+Read.m */,
 				752200481AD63B7800FAFFE4 /* Place.h */,
 				752200491AD63B7800FAFFE4 /* Place.m */,
 			);
@@ -340,8 +350,10 @@
 				7522004A1AD63B7800FAFFE4 /* Place.m in Sources */,
 				7522001C1AD5FE4300FAFFE4 /* AppDelegate.m in Sources */,
 				752200191AD5FE4300FAFFE4 /* main.m in Sources */,
+				75B7F2401AD65BFF000E1640 /* Place+Read.m in Sources */,
 				752200221AD5FE4300FAFFE4 /* ViewController.m in Sources */,
 				7522001F1AD5FE4300FAFFE4 /* Wanderlust.xcdatamodeld in Sources */,
+				752200531AD6484800FAFFE4 /* Place+Create.m in Sources */,
 				7522004E1AD63EF900FAFFE4 /* APIClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

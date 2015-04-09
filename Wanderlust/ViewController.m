@@ -8,10 +8,15 @@
 
 #import "ViewController.h"
 #import "APIClient.h"
+#import "Macros.h"
+#import <SVProgressHUD/SVProgressHUD.h>
+#import <UIImageView+AFNetworking.h>
+#import "Place+Read.h"
 
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet CardsStackView *cardsStack;
+@property (strong, nonatomic) NSArray *places;
 
 @end
 
@@ -25,8 +30,12 @@
     
     self.cardsStack.delegate = self;
     self.cardsStack.dataSource = self;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
-    [self getData];
+    [self getLocations];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,22 +45,65 @@
 
 #pragma mark - Get Data Helper Methods
 
-- (void)getData {
-    [[APIClient sharedInstance] getLocationsWithCompletionBlock:^(NSError *error, NSDictionary *response) {
-        NSLog(@"response %@", response);
+- (void)getLocations {
+    
+    [SVProgressHUD showWithStatus:@"Loading places..."];
+    
+    [[APIClient sharedInstance] getPlacesWithCompletionBlock:^(NSError *error, NSDictionary *response) {
+        if (!error) {
+            NSArray *places = response[@"places"];
+            self.places = places;
+            DLog(@"Received %lu places from the API.", (unsigned long)places.count);
+            
+            [self.cardsStack reload];
+            
+            [SVProgressHUD showSuccessWithStatus:@"Success!"];
+        } else {
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Error getting places: %@", [error localizedDescription]]];
+        }
+    }];
+}
+
+- (void)setImageForImageView:(UIImageView *)view withPlace:(Place *)place {
+    
+    __weak UIImageView *weakImageView = view;
+    NSURLRequest *request = [NSURLRequest requestWithURL:place.imageDownloadURL];
+    [view setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+        UIImageView *strongImageView = weakImageView;
+        if (!strongImageView) return;
+        
+        [UIView transitionWithView:strongImageView
+                          duration:0.3
+                           options:UIViewAnimationOptionTransitionCrossDissolve
+                        animations:^{
+                            strongImageView.image = image;
+                        }
+                        completion:NULL];
+        
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+        NSLog(@"Failed downloading image with error %@", [error localizedDescription]);
     }];
 }
 
 #pragma mark - CardsStackViewDelegate Methods
 
 - (NSInteger)numberOfCardsOnStack:(CardsStackView *)stackView {
-    return 5;
+    // Only when we have data for places, we want the cards stack to load cards
+    if (self.places) {
+        return 5;
+    } else {
+        return 0;
+    }
 }
 
 - (PannableCardView *)nextCardViewToShow:(CardsStackView *)stackView {
+    NSUInteger randomIndex = arc4random() % [self.places count];
+    Place *randomPlace = [self.places objectAtIndex:randomIndex];
+    
     PannableCardView *newCardView = [[PannableCardView alloc] initWithFrame:stackView.bounds];
-    newCardView.imageView.image = [UIImage imageNamed:@"cat"];
     newCardView.delegate = stackView;
+    
+    [self setImageForImageView:newCardView.imageView withPlace:randomPlace];
     
     return newCardView;
 }

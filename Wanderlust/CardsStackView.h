@@ -47,4 +47,6 @@
 @property (weak, nonatomic) id <CardsStackViewDataSource> dataSource;
 @property (weak, nonatomic) id <CardsStackViewDelegate> delegate;
 
+- (void)reload;
+
 @end

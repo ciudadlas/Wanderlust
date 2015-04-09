@@ -47,7 +47,6 @@ static CGFloat const RotationAngle = M_PI/8;      // Higher = stronger rotation 
     
     self.imageView.contentMode = UIViewContentModeScaleAspectFill;
     self.imageView.frame = self.bounds;
-    self.imageView.clipsToBounds = YES;
 }
 
 #pragma mark - View Setup Methods
@@ -57,11 +56,13 @@ static CGFloat const RotationAngle = M_PI/8;      // Higher = stronger rotation 
     self.layer.shadowRadius = 3;
     self.layer.shadowOpacity = 0.2;
     self.layer.shadowOffset = CGSizeMake(1, 1);
-    self.layer.borderColor = HEXCOLOR(0xFFFFFF).CGColor;
+    self.layer.borderColor = HEXCOLOR(0xE4E3DA).CGColor;
     self.layer.borderWidth = 5;
     self.layer.allowsEdgeAntialiasing = YES;
     
     self.backgroundColor = [UIColor clearColor];
+    
+    self.clipsToBounds = YES;
     
     self.imageView = [[UIImageView alloc] init];
     [self addSubview:self.imageView];

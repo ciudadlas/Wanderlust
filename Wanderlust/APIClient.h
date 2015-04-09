@@ -13,6 +13,6 @@ typedef void (^APIResult)(NSError *error, NSDictionary *response);
 @interface APIClient : AFHTTPRequestOperationManager
 
 + (APIClient *)sharedInstance;
-- (void)getLocationsWithCompletionBlock:(APIResult)completionBlock;
+- (void)getPlacesWithCompletionBlock:(APIResult)completionBlock;
 
 @end

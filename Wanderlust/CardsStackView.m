@@ -17,29 +17,6 @@
 
 @implementation CardsStackView
 
-#pragma mark - View Lifecycle
-
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
-//    NSLog(@"self.bound %@", NSStringFromCGRect(self.bounds));
-    
-    if (!self.addedViews) {
-        self.addedViews = YES;
-
-        // Default number of cards on stack
-        NSInteger numberOfCardsOnStack = 3;
-        
-        if ([self.dataSource respondsToSelector:@selector(numberOfCardsOnStack:)]) {
-            numberOfCardsOnStack = [self.dataSource numberOfCardsOnStack:self];
-        }
-                                          
-        for (int i = 0; i < numberOfCardsOnStack; i++) {
-            [self addCardView];
-        }
-    }
-}
-
 #pragma mark - PannableCardViewDelegate Methods
 
 - (void)cardSwipedRight:(PannableCardView *)view {
@@ -73,6 +50,21 @@
     }
     
     [self debugPrintNumberOfViewsOnStack];
+}
+
+- (void)reload {
+
+    NSInteger numberOfCardsOnStack;
+    
+    if ([self.dataSource respondsToSelector:@selector(numberOfCardsOnStack:)]) {
+        numberOfCardsOnStack = [self.dataSource numberOfCardsOnStack:self];
+    } else {
+        numberOfCardsOnStack = 3;
+    }
+    
+    for (int i = 0; i < numberOfCardsOnStack; i++) {
+        [self addCardView];
+    }
 }
 
 #pragma mark - Debug Methods
