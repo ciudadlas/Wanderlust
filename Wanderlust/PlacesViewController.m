@@ -13,6 +13,7 @@
 #import <UIImageView+AFNetworking.h>
 #import "Place+Read.h"
 #import "MapViewController.h"
+#import "PlaceView.h"
 
 @interface PlacesViewController ()
 
@@ -21,7 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *placeName;
 @property (weak, nonatomic) IBOutlet UILabel *placeAddress;
 
-@property (strong, nonatomic) NSArray *places;
+@property (strong, nonatomic) NSMutableArray *places;
 
 @end
 
@@ -75,7 +76,7 @@
     
     [[APIClient sharedInstance] getPlacesWithCompletionBlock:^(NSError *error, NSDictionary *response) {
         if (!error) {
-            NSArray *places = response[@"places"];
+            NSMutableArray *places = response[@"places"];
             self.places = places;
             DLog(@"Received %lu places from the API.", (unsigned long)places.count);
             
@@ -125,9 +126,9 @@
     Place *randomPlace = [self.places objectAtIndex:randomIndex];
     NSLog(@"Random place %@", randomPlace.title);
     
-    PannableCardView *newCardView = [[PannableCardView alloc] initWithFrame:stackView.bounds];
+    PlaceView *newCardView = [[PlaceView alloc] initWithFrame:stackView.bounds];
     newCardView.delegate = stackView;
-    newCardView.tag = randomIndex;
+    newCardView.place = randomPlace;
     
     [self setImageForImageView:newCardView.imageView withPlace:randomPlace];
     
@@ -137,11 +138,10 @@
 #pragma mark - CardsStackViewDelegate Methods
 
 - (void)stackView:(CardsStackView *)stackView cardViewDidAppearOnTopOfStack:(PannableCardView *)cardView {
-    int tag = (int)cardView.tag;
-    Place *place = [self.places objectAtIndex:tag];
+    PlaceView *placeView = (PlaceView *)cardView;
 
-    self.placeName.text = place.title;
-    self.placeAddress.text = place.address;
+    self.placeName.text = placeView.place.title;
+    self.placeAddress.text = placeView.place.address;
     self.cardOnTop = cardView;
 }
 
@@ -150,11 +150,20 @@
 }
 
 - (void)stackView:(CardsStackView *)stackView didSwipeCardViewLeft:(PannableCardView *)cardView {
-    NSLog(@"Card view swiped left");
+    // Discard item from the list
+    PlaceView *placeView = (PlaceView *)cardView;
+    [self.places removeObject:placeView.place];
+    
+    NSLog(@"Number of places left %lu", (unsigned long)self.places.count);
 }
 
 - (void)stackView:(CardsStackView *)stackView didSwipeCardViewRight:(PannableCardView *)cardView {
-    NSLog(@"Card view swiped right");
+    // Favorite the item
+
+    Place *place = [self.places objectAtIndex:cardView.tag];
+    place.isFavorited = [NSNumber numberWithBool:YES];
+    
+    NSLog(@"Number of places left %lu", (unsigned long)self.places.count);
 }
 
 #pragma mark - View Controller Transition

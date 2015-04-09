@@ -45,7 +45,7 @@
     return item;    
 }
 
-+ (NSArray *)placesWithDataArray:(NSArray *)placesArray inManagedObjectContext:(NSManagedObjectContext *)context {
++ (NSMutableArray *)placesWithDataArray:(NSArray *)placesArray inManagedObjectContext:(NSManagedObjectContext *)context {
     
     NSMutableArray *places = [NSMutableArray new];
     
@@ -54,7 +54,7 @@
         [places addObject:newPlace];
     }
     
-    return [NSArray arrayWithArray:places];
+    return places;
 }
 
 @end
