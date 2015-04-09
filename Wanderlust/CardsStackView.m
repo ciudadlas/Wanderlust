@@ -22,8 +22,8 @@
 - (void)cardSwipedRight:(PannableCardView *)view {
     [view removeFromSuperview];
     
-    if ([self.delegate respondsToSelector:@selector(cardViewSwipedRight:cardView:)]) {
-        [self.delegate cardViewSwipedRight:self cardView:view];
+    if ([self.delegate respondsToSelector:@selector(stackView:didSwipeCardViewRight:)]) {
+        [self.delegate stackView:self didSwipeCardViewRight:view];
     }
     
     [self addCardView];
@@ -33,8 +33,8 @@
 - (void)cardSwipedLeft:(PannableCardView *)view {
     [view removeFromSuperview];
     
-    if ([self.delegate respondsToSelector:@selector(cardViewSwipedLeft:cardView:)]) {
-        [self.delegate cardViewSwipedLeft:self cardView:view];
+    if ([self.delegate respondsToSelector:@selector(stackView:didSwipeCardViewLeft:)]) {
+        [self.delegate stackView:self didSwipeCardViewLeft:view];
     }
     
     [self addCardView];
@@ -42,8 +42,8 @@
 }
 
 - (void)tappedCard:(PannableCardView *)view {
-    if ([self.delegate respondsToSelector:@selector(stackView:didTapCardView:)]) {
-        [self.delegate stackView:self didTapCardView:view];
+    if ([self.delegate respondsToSelector:@selector(stackView:didTapOnCardView:)]) {
+        [self.delegate stackView:self didTapOnCardView:view];
     }
 }
 
@@ -63,8 +63,8 @@
 - (void)findViewOnTop {
     PannableCardView *topCardView = [self.subviews lastObject];
     
-    if ([self.delegate respondsToSelector:@selector(cardViewDidAppearOnTopOfStack:cardView:)]) {
-        [self.delegate cardViewDidAppearOnTopOfStack:self cardView:topCardView];
+    if ([self.delegate respondsToSelector:@selector(stackView:cardViewDidAppearOnTopOfStack:)]) {
+        [self.delegate stackView:self cardViewDidAppearOnTopOfStack:topCardView];
     }
 }
 

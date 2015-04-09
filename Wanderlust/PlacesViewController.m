@@ -136,7 +136,7 @@
 
 #pragma mark - CardsStackViewDelegate Methods
 
-- (void)cardViewDidAppearOnTopOfStack:(CardsStackView *)stackView cardView:(PannableCardView *)cardView {
+- (void)stackView:(CardsStackView *)stackView cardViewDidAppearOnTopOfStack:(PannableCardView *)cardView {
     int tag = (int)cardView.tag;
     Place *place = [self.places objectAtIndex:tag];
 
@@ -145,15 +145,15 @@
     self.cardOnTop = cardView;
 }
 
-- (void)stackView:(CardsStackView *)stackView didTapCardView:(PannableCardView *)cardView {
+- (void)stackView:(CardsStackView *)stackView didTapOnCardView:(PannableCardView *)cardView {
     [self performSegueWithIdentifier:@"MapViewControllerSegue" sender:self];
 }
 
-- (void)cardViewSwipedLeft:(CardsStackView *)stackView cardView:(PannableCardView *)cardView {
+- (void)stackView:(CardsStackView *)stackView didSwipeCardViewLeft:(PannableCardView *)cardView {
     NSLog(@"Card view swiped left");
 }
 
-- (void)cardViewSwipedRight:(CardsStackView *)stackView cardView:(PannableCardView *)cardView {
+- (void)stackView:(CardsStackView *)stackView didSwipeCardViewRight:(PannableCardView *)cardView {
     NSLog(@"Card view swiped right");
 }
 

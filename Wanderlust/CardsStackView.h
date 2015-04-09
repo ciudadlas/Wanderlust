@@ -33,23 +33,22 @@
 /**
  * Delegate method that is called when a card view is swiped left
  */
-- (void)cardViewSwipedLeft:(CardsStackView *)stackView cardView:(PannableCardView *)cardView;
+- (void)stackView:(CardsStackView *)stackView didSwipeCardViewLeft:(PannableCardView *)cardView;
 
 /**
  * Delegate method that is called when a card view is swiped right
  */
-- (void)cardViewSwipedRight:(CardsStackView *)stackView cardView:(PannableCardView *)cardView;
+- (void)stackView:(CardsStackView *)stackView didSwipeCardViewRight:(PannableCardView *)cardView;
 
 /**
  * Delegate method that is called when a card view is tapped once
  */
-- (void)stackView:(CardsStackView *)stackView didTapCardView:(PannableCardView *)cardView;
-
+- (void)stackView:(CardsStackView *)stackView didTapOnCardView:(PannableCardView *)cardView;
 
 /**
  * Delegate method that is called when a card view is appears at the top of the stack
  */
-- (void)cardViewDidAppearOnTopOfStack:(CardsStackView *)stackView cardView:(PannableCardView *)cardView;
+- (void)stackView:(CardsStackView *)stackView cardViewDidAppearOnTopOfStack:(PannableCardView *)cardView;
 
 
 @end
