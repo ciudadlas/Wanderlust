@@ -15,6 +15,8 @@
 		752200271AD5FE4300FAFFE4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 752200261AD5FE4300FAFFE4 /* Images.xcassets */; };
 		7522002A1AD5FE4300FAFFE4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 752200281AD5FE4300FAFFE4 /* LaunchScreen.xib */; };
 		752200361AD5FE4300FAFFE4 /* WanderlustTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 752200351AD5FE4300FAFFE4 /* WanderlustTests.m */; };
+		752200411AD5FF3300FAFFE4 /* CardsStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 752200401AD5FF3300FAFFE4 /* CardsStackView.m */; };
+		752200441AD5FF6200FAFFE4 /* PannableCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 752200431AD5FF6200FAFFE4 /* PannableCardView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,11 @@
 		7522002F1AD5FE4300FAFFE4 /* WanderlustTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WanderlustTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		752200341AD5FE4300FAFFE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		752200351AD5FE4300FAFFE4 /* WanderlustTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WanderlustTests.m; sourceTree = "<group>"; };
+		7522003F1AD5FF3300FAFFE4 /* CardsStackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardsStackView.h; sourceTree = "<group>"; };
+		752200401AD5FF3300FAFFE4 /* CardsStackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardsStackView.m; sourceTree = "<group>"; };
+		752200421AD5FF6200FAFFE4 /* PannableCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PannableCardView.h; sourceTree = "<group>"; };
+		752200431AD5FF6200FAFFE4 /* PannableCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PannableCardView.m; sourceTree = "<group>"; };
+		752200451AD6048B00FAFFE4 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +94,11 @@
 				7522001B1AD5FE4300FAFFE4 /* AppDelegate.m */,
 				752200201AD5FE4300FAFFE4 /* ViewController.h */,
 				752200211AD5FE4300FAFFE4 /* ViewController.m */,
+				7522003F1AD5FF3300FAFFE4 /* CardsStackView.h */,
+				752200401AD5FF3300FAFFE4 /* CardsStackView.m */,
+				752200421AD5FF6200FAFFE4 /* PannableCardView.h */,
+				752200431AD5FF6200FAFFE4 /* PannableCardView.m */,
+				752200451AD6048B00FAFFE4 /* Macros.h */,
 				752200231AD5FE4300FAFFE4 /* Main.storyboard */,
 				752200261AD5FE4300FAFFE4 /* Images.xcassets */,
 				752200281AD5FE4300FAFFE4 /* LaunchScreen.xib */,
@@ -222,6 +234,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				752200441AD5FF6200FAFFE4 /* PannableCardView.m in Sources */,
+				752200411AD5FF3300FAFFE4 /* CardsStackView.m in Sources */,
 				7522001C1AD5FE4300FAFFE4 /* AppDelegate.m in Sources */,
 				752200191AD5FE4300FAFFE4 /* main.m in Sources */,
 				752200221AD5FE4300FAFFE4 /* ViewController.m in Sources */,
@@ -348,6 +362,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Wanderlust/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -358,6 +373,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Wanderlust/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
