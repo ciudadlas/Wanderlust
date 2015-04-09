@@ -17,6 +17,8 @@
 
 @implementation CardsStackView
 
+#pragma mark - View Lifecycle
+
 - (void)layoutSubviews {
     [super layoutSubviews];
     
@@ -36,17 +38,6 @@
             [self addCardView];
         }
     }
-}
-
-#pragma mark - Helper Methods
-
-- (void)addCardView {
-    if ([self.dataSource respondsToSelector:@selector(nextCardViewToShow:)]) {
-        PannableCardView *newCardView = [self.dataSource nextCardViewToShow:self];
-        [self addSubview:newCardView];
-    }
-    
-    [self debugPrintNumberOfViewsOnStack];
 }
 
 #pragma mark - PannableCardViewDelegate Methods
@@ -69,6 +60,17 @@
     }
     
     [self addCardView];
+}
+
+#pragma mark - Helper Methods
+
+- (void)addCardView {
+    if ([self.dataSource respondsToSelector:@selector(nextCardViewToShow:)]) {
+        PannableCardView *newCardView = [self.dataSource nextCardViewToShow:self];
+        [self addSubview:newCardView];
+    }
+    
+    [self debugPrintNumberOfViewsOnStack];
 }
 
 #pragma mark - Debug Methods
