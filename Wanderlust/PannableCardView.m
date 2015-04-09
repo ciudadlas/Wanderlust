@@ -16,7 +16,7 @@ static CGFloat const ScaleMax = 0.93;             // Upper limit for how much th
 
 static CGFloat const RotationStrength = 320;      // Strength of rotation. Higher value means slower rotation
 static CGFloat const RotationMax = 1;             // The maximum rotation allowed in radians.  Higher value means card can keep rotating longer
-static CGFloat const RotationAngle = M_PI/8;      // Higher = stronger rotation angle
+static CGFloat const RotationAngle = M_PI/8;      // Higher value means stronger rotation angle
 
 @interface PannableCardView()
 
