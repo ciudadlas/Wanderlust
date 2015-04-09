@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		752200191AD5FE4300FAFFE4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 752200181AD5FE4300FAFFE4 /* main.m */; };
+		7522001C1AD5FE4300FAFFE4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7522001B1AD5FE4300FAFFE4 /* AppDelegate.m */; };
+		7522001F1AD5FE4300FAFFE4 /* Wanderlust.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7522001D1AD5FE4300FAFFE4 /* Wanderlust.xcdatamodeld */; };
+		752200221AD5FE4300FAFFE4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752200211AD5FE4300FAFFE4 /* ViewController.m */; };
+		752200251AD5FE4300FAFFE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752200231AD5FE4300FAFFE4 /* Main.storyboard */; };
+		752200271AD5FE4300FAFFE4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 752200261AD5FE4300FAFFE4 /* Images.xcassets */; };
+		7522002A1AD5FE4300FAFFE4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 752200281AD5FE4300FAFFE4 /* LaunchScreen.xib */; };
+		752200361AD5FE4300FAFFE4 /* WanderlustTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 752200351AD5FE4300FAFFE4 /* WanderlustTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		752200301AD5FE4300FAFFE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7522000B1AD5FE4300FAFFE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 752200121AD5FE4300FAFFE4;
+			remoteInfo = Wanderlust;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		752200131AD5FE4300FAFFE4 /* Wanderlust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wanderlust.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		752200171AD5FE4300FAFFE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		752200181AD5FE4300FAFFE4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7522001A1AD5FE4300FAFFE4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7522001B1AD5FE4300FAFFE4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7522001E1AD5FE4300FAFFE4 /* Wanderlust.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wanderlust.xcdatamodel; sourceTree = "<group>"; };
+		752200201AD5FE4300FAFFE4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		752200211AD5FE4300FAFFE4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		752200241AD5FE4300FAFFE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		752200261AD5FE4300FAFFE4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		752200291AD5FE4300FAFFE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		7522002F1AD5FE4300FAFFE4 /* WanderlustTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WanderlustTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		752200341AD5FE4300FAFFE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		752200351AD5FE4300FAFFE4 /* WanderlustTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WanderlustTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		752200101AD5FE4300FAFFE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7522002C1AD5FE4300FAFFE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7522000A1AD5FE4300FAFFE4 = {
+			isa = PBXGroup;
+			children = (
+				752200151AD5FE4300FAFFE4 /* Wanderlust */,
+				752200321AD5FE4300FAFFE4 /* WanderlustTests */,
+				752200141AD5FE4300FAFFE4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		752200141AD5FE4300FAFFE4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				752200131AD5FE4300FAFFE4 /* Wanderlust.app */,
+				7522002F1AD5FE4300FAFFE4 /* WanderlustTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		752200151AD5FE4300FAFFE4 /* Wanderlust */ = {
+			isa = PBXGroup;
+			children = (
+				7522001A1AD5FE4300FAFFE4 /* AppDelegate.h */,
+				7522001B1AD5FE4300FAFFE4 /* AppDelegate.m */,
+				752200201AD5FE4300FAFFE4 /* ViewController.h */,
+				752200211AD5FE4300FAFFE4 /* ViewController.m */,
+				752200231AD5FE4300FAFFE4 /* Main.storyboard */,
+				752200261AD5FE4300FAFFE4 /* Images.xcassets */,
+				752200281AD5FE4300FAFFE4 /* LaunchScreen.xib */,
+				7522001D1AD5FE4300FAFFE4 /* Wanderlust.xcdatamodeld */,
+				752200161AD5FE4300FAFFE4 /* Supporting Files */,
+			);
+			path = Wanderlust;
+			sourceTree = "<group>";
+		};
+		752200161AD5FE4300FAFFE4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				752200171AD5FE4300FAFFE4 /* Info.plist */,
+				752200181AD5FE4300FAFFE4 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		752200321AD5FE4300FAFFE4 /* WanderlustTests */ = {
+			isa = PBXGroup;
+			children = (
+				752200351AD5FE4300FAFFE4 /* WanderlustTests.m */,
+				752200331AD5FE4300FAFFE4 /* Supporting Files */,
+			);
+			path = WanderlustTests;
+			sourceTree = "<group>";
+		};
+		752200331AD5FE4300FAFFE4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				752200341AD5FE4300FAFFE4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		752200121AD5FE4300FAFFE4 /* Wanderlust */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 752200391AD5FE4300FAFFE4 /* Build configuration list for PBXNativeTarget "Wanderlust" */;
+			buildPhases = (
+				7522000F1AD5FE4300FAFFE4 /* Sources */,
+				752200101AD5FE4300FAFFE4 /* Frameworks */,
+				752200111AD5FE4300FAFFE4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Wanderlust;
+			productName = Wanderlust;
+			productReference = 752200131AD5FE4300FAFFE4 /* Wanderlust.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7522002E1AD5FE4300FAFFE4 /* WanderlustTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7522003C1AD5FE4300FAFFE4 /* Build configuration list for PBXNativeTarget "WanderlustTests" */;
+			buildPhases = (
+				7522002B1AD5FE4300FAFFE4 /* Sources */,
+				7522002C1AD5FE4300FAFFE4 /* Frameworks */,
+				7522002D1AD5FE4300FAFFE4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				752200311AD5FE4300FAFFE4 /* PBXTargetDependency */,
+			);
+			name = WanderlustTests;
+			productName = WanderlustTests;
+			productReference = 7522002F1AD5FE4300FAFFE4 /* WanderlustTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7522000B1AD5FE4300FAFFE4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Serdar Karatekin";
+				TargetAttributes = {
+					752200121AD5FE4300FAFFE4 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					7522002E1AD5FE4300FAFFE4 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 752200121AD5FE4300FAFFE4;
+					};
+				};
+			};
+			buildConfigurationList = 7522000E1AD5FE4300FAFFE4 /* Build configuration list for PBXProject "Wanderlust" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7522000A1AD5FE4300FAFFE4;
+			productRefGroup = 752200141AD5FE4300FAFFE4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				752200121AD5FE4300FAFFE4 /* Wanderlust */,
+				7522002E1AD5FE4300FAFFE4 /* WanderlustTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		752200111AD5FE4300FAFFE4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				752200251AD5FE4300FAFFE4 /* Main.storyboard in Resources */,
+				7522002A1AD5FE4300FAFFE4 /* LaunchScreen.xib in Resources */,
+				752200271AD5FE4300FAFFE4 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7522002D1AD5FE4300FAFFE4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7522000F1AD5FE4300FAFFE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7522001C1AD5FE4300FAFFE4 /* AppDelegate.m in Sources */,
+				752200191AD5FE4300FAFFE4 /* main.m in Sources */,
+				752200221AD5FE4300FAFFE4 /* ViewController.m in Sources */,
+				7522001F1AD5FE4300FAFFE4 /* Wanderlust.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7522002B1AD5FE4300FAFFE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				752200361AD5FE4300FAFFE4 /* WanderlustTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		752200311AD5FE4300FAFFE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 752200121AD5FE4300FAFFE4 /* Wanderlust */;
+			targetProxy = 752200301AD5FE4300FAFFE4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		752200231AD5FE4300FAFFE4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				752200241AD5FE4300FAFFE4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		752200281AD5FE4300FAFFE4 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				752200291AD5FE4300FAFFE4 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		752200371AD5FE4300FAFFE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		752200381AD5FE4300FAFFE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7522003A1AD5FE4300FAFFE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Wanderlust/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7522003B1AD5FE4300FAFFE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Wanderlust/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7522003D1AD5FE4300FAFFE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WanderlustTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wanderlust.app/Wanderlust";
+			};
+			name = Debug;
+		};
+		7522003E1AD5FE4300FAFFE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WanderlustTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wanderlust.app/Wanderlust";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7522000E1AD5FE4300FAFFE4 /* Build configuration list for PBXProject "Wanderlust" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				752200371AD5FE4300FAFFE4 /* Debug */,
+				752200381AD5FE4300FAFFE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		752200391AD5FE4300FAFFE4 /* Build configuration list for PBXNativeTarget "Wanderlust" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7522003A1AD5FE4300FAFFE4 /* Debug */,
+				7522003B1AD5FE4300FAFFE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7522003C1AD5FE4300FAFFE4 /* Build configuration list for PBXNativeTarget "WanderlustTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7522003D1AD5FE4300FAFFE4 /* Debug */,
+				7522003E1AD5FE4300FAFFE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7522001D1AD5FE4300FAFFE4 /* Wanderlust.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7522001E1AD5FE4300FAFFE4 /* Wanderlust.xcdatamodel */,
+			);
+			currentVersion = 7522001E1AD5FE4300FAFFE4 /* Wanderlust.xcdatamodel */;
+			path = Wanderlust.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 7522000B1AD5FE4300FAFFE4 /* Project object */;
+}
