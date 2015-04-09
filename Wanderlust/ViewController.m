@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "APIClient.h"
 
 @interface ViewController ()
 
@@ -24,11 +25,21 @@
     
     self.cardsStack.delegate = self;
     self.cardsStack.dataSource = self;
+    
+    [self getData];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Get Data Helper Methods
+
+- (void)getData {
+    [[APIClient sharedInstance] getLocationsWithCompletionBlock:^(NSError *error, NSDictionary *response) {
+        NSLog(@"response %@", response);
+    }];
 }
 
 #pragma mark - CardsStackViewDelegate Methods
