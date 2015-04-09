@@ -12,6 +12,8 @@
 
 @interface MapViewController ()
 
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
 @end
 
 @implementation MapViewController
@@ -26,7 +28,9 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
-    [self configureViewWithCoordinates:CLLocationCoordinate2DMake([self.place.latitude doubleValue], [self.place.longitude doubleValue])];
+    if (self.place) {
+        [self configureViewWithCoordinates:CLLocationCoordinate2DMake([self.place.latitude doubleValue], [self.place.longitude doubleValue])];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,8 +51,9 @@
     [annotation setCoordinate:coordinates];
     [annotation setTitle:self.place.title];
     [self.mapView addAnnotation:annotation];
-
 }
+
+#pragma mark - IBAction Methods
 
 - (IBAction)tappedCloseButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];

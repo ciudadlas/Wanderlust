@@ -12,7 +12,6 @@
 
 @interface MapViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) Place *place;
 
 @end
