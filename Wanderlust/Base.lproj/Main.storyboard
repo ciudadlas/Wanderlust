@@ -21,14 +21,39 @@
                                 <rect key="frame" x="29" y="56" width="542" height="399"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDy-5q-zPh">
+                                <rect key="frame" x="29" y="518" width="111" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5Q-9I-yqP">
+                                <rect key="frame" x="29" y="465" width="542" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.17647058823529413" green="0.49019607843137253" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="m5Q-9I-yqP" secondAttribute="trailing" constant="13" id="0rB-hf-GGQ"/>
                             <constraint firstItem="NNq-WQ-dSt" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="1Bk-I3-5GV"/>
                             <constraint firstItem="NNq-WQ-dSt" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="36" id="2Yn-ji-tbd"/>
                             <constraint firstItem="NNq-WQ-dSt" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="13" id="4tv-1d-eHE"/>
+                            <constraint firstItem="m5Q-9I-yqP" firstAttribute="centerX" secondItem="NNq-WQ-dSt" secondAttribute="centerX" id="8yz-zH-MxN"/>
+                            <constraint firstItem="aDy-5q-zPh" firstAttribute="leading" secondItem="NNq-WQ-dSt" secondAttribute="leading" id="M2O-xf-Mn6"/>
+                            <constraint firstItem="aDy-5q-zPh" firstAttribute="top" secondItem="m5Q-9I-yqP" secondAttribute="bottom" constant="17" id="Xxs-xt-WyC"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="NNq-WQ-dSt" secondAttribute="bottom" constant="145" id="aah-in-NGx"/>
+                            <constraint firstItem="aDy-5q-zPh" firstAttribute="leading" secondItem="m5Q-9I-yqP" secondAttribute="leading" id="gsV-Dd-ZuM"/>
+                            <constraint firstItem="m5Q-9I-yqP" firstAttribute="top" secondItem="NNq-WQ-dSt" secondAttribute="bottom" constant="10" id="seC-fQ-aU5"/>
+                            <constraint firstItem="m5Q-9I-yqP" firstAttribute="centerX" secondItem="aDy-5q-zPh" secondAttribute="centerX" id="shE-gP-4op"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8yz-zH-MxN"/>
+                                <exclude reference="shE-gP-4op"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="cardsStack" destination="NNq-WQ-dSt" id="ZRa-3s-2IF"/>

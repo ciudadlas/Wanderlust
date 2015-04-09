@@ -85,7 +85,7 @@
     }];
 }
 
-#pragma mark - CardsStackViewDelegate Methods
+#pragma mark - CardsStackViewDataSource Methods
 
 - (NSInteger)numberOfCardsOnStack:(CardsStackView *)stackView {
     // Only when we have data for places, we want the cards stack to load cards
@@ -102,13 +102,14 @@
     
     PannableCardView *newCardView = [[PannableCardView alloc] initWithFrame:stackView.bounds];
     newCardView.delegate = stackView;
+    newCardView.tag = randomIndex;
     
     [self setImageForImageView:newCardView.imageView withPlace:randomPlace];
     
     return newCardView;
 }
 
-#pragma mark - CardsStackViewDataSource Methods
+#pragma mark - CardsStackViewDelegate Methods
 
 - (void)cardViewSwipedLeft:(CardsStackView *)stackView cardView:(PannableCardView *)cardView {
     NSLog(@"Card view swiped left");
