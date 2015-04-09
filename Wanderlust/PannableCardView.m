@@ -60,7 +60,7 @@ static CGFloat const RotationAngle = M_PI/8;      // Higher = stronger rotation 
     self.layer.borderWidth = 5;
     self.layer.allowsEdgeAntialiasing = YES;
     
-    self.backgroundColor = [UIColor clearColor];
+    self.backgroundColor = HEXCOLOR(0xF4D338);
     
     self.clipsToBounds = YES;
     
