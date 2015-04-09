@@ -33,29 +33,56 @@
         }
                                           
         for (int i = 0; i < numberOfCardsOnStack; i++) {
-            if ([self.dataSource respondsToSelector:@selector(nextCardViewToShow:)]) {
-                PannableCardView *newCardView = [self.dataSource nextCardViewToShow:self];
-                [self addSubview:newCardView];
-            }
+            [self addCardView];
         }
     }
+}
+
+#pragma mark - Helper Methods
+
+- (void)addCardView {
+    if ([self.dataSource respondsToSelector:@selector(nextCardViewToShow:)]) {
+        PannableCardView *newCardView = [self.dataSource nextCardViewToShow:self];
+        [self addSubview:newCardView];
+    }
+    
+    [self debugPrintNumberOfViewsOnStack];
 }
 
 #pragma mark - PannableCardViewDelegate Methods
 
 - (void)cardSwipedRight:(PannableCardView *)view {
+    [view removeFromSuperview];
+    
     if ([self.delegate respondsToSelector:@selector(cardViewSwipedRight:cardView:)]) {
         [self.delegate cardViewSwipedRight:self cardView:view];
     }
-    [view removeFromSuperview];
+    
+    [self addCardView];
 }
 
 - (void)cardSwipedLeft:(PannableCardView *)view {
+    [view removeFromSuperview];
+    
     if ([self.delegate respondsToSelector:@selector(cardViewSwipedLeft:cardView:)]) {
         [self.delegate cardViewSwipedLeft:self cardView:view];
     }
-    [view removeFromSuperview];
+    
+    [self addCardView];
 }
 
+#pragma mark - Debug Methods
+
+- (void)debugPrintNumberOfViewsOnStack {
+    int numberOfCards = 0;
+    
+    for (UIView *view in self.subviews) {
+        if ([view isKindOfClass:[PannableCardView class]]) {
+            numberOfCards++;
+        }
+    }
+    
+    NSLog(@"Number of cards %i", numberOfCards);
+}
 
 @end
