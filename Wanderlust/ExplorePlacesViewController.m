@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Serdar Karatekin. All rights reserved.
 //
 
-#import "PlacesViewController.h"
+#import "ExplorePlacesViewController.h"
 #import "APIClient.h"
 #import "Macros.h"
 #import <SVProgressHUD/SVProgressHUD.h>
@@ -17,7 +17,7 @@
 #import "PlaceView.h"
 #import "AppDelegate.h"
 
-@interface PlacesViewController ()
+@interface ExplorePlacesViewController ()
 
 @property (weak, nonatomic) IBOutlet CardsStackView *cardsStack;
 @property (weak, nonatomic) PlaceView *cardOnTop;
@@ -29,7 +29,7 @@
 
 @end
 
-@implementation PlacesViewController
+@implementation ExplorePlacesViewController
 
 #pragma mark - View Lifecycle
 
