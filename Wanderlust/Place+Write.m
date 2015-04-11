@@ -24,7 +24,7 @@
     NSNumber *latitude = [NSNumber numberWithFloat:[[infoDictionary objectForKey:@"latitude"] floatValue]];
     NSNumber *longitude = [NSNumber numberWithFloat:[[infoDictionary objectForKey:@"longitude"] floatValue]];
     
-    // Here check if a place with this ID already is stored, to avoid duplicate items stored
+    // Here check if a place with this ID already is stored, to avoid duplicate items in the store
     item = [self placeWithID:placeID inManagedObjectContext:context];
     
     // If not, create a new object and set the id on it
