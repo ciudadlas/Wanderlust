@@ -47,7 +47,7 @@
     maskLayer.path = pathFinal.CGPath;
     toViewController.view.layer.mask = maskLayer;
     
-    // Set up animation
+    // Set up animation from start path to end path
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"path"];
     animation.fromValue = (__bridge id)(pathInitial.CGPath);
     animation.toValue = (__bridge id)(pathFinal.CGPath);
