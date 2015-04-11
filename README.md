@@ -16,4 +16,4 @@
 ## Future enhancements to consider
 - Allow user to un-favorite a place from the list of favorites.
 - Make CardsStackView more customizable by implementing additional delegate methods.
-- Re-factor and improve Core Data layer
+- Re-factor and improve Core Data layer, and go over its thread-safety. De-couple managed object contexts from the view controllers.
