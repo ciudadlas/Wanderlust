@@ -154,7 +154,7 @@ static NSString *const CellIdentifier = @"FavoritePlaceTableViewCell";
     cell.placeAddress.text = place.address;
     cell.placeImageView.image = nil;
 
-    [cell.placeImageView setImageWithURL:place.imageDownloadURL placeholderImage:[UIImage imageNamed:@"wanderlust_logo"] fadeInWithDuration:0.3];
+    [cell.placeImageView setImageWithURL:place.imageDownloadURL placeholderImage:[UIImage imageNamed:@"favorites_placeholder"] fadeInWithDuration:0.3];
 }
 
 @end
