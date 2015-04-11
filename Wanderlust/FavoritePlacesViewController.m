@@ -13,8 +13,8 @@
 #import "Place+Read.h"
 #import "AppDelegate.h"
 #import "Macros.h"
-#import <UIImageView+AFNetworking.h>
 #import "FavoritePlaceTableViewCell.h"
+#import "UIImageView+AFNetworkingFadeInAdditions.h"
 
 static NSString *const CellIdentifier = @"FavoritePlaceTableViewCell";
 
@@ -148,10 +148,9 @@ static NSString *const CellIdentifier = @"FavoritePlaceTableViewCell";
     Place *place = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.placeTitle.text = place.title;
     cell.placeAddress.text = place.address;
-    
     cell.placeImageView.image = nil;
 
-    [cell.placeImageView setImageWithURL:place.imageDownloadURL placeholderImage:[UIImage imageNamed:@"wanderlust_logo"]];
+    [cell.placeImageView setImageWithURL:place.imageDownloadURL placeholderImage:[UIImage imageNamed:@"wanderlust_logo"] fadeInWithDuration:0.3];
 }
 
 @end
