@@ -131,7 +131,7 @@
                         completion:NULL];
         
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
-        NSLog(@"Failed downloading image with error %@", [error localizedDescription]);
+        DLog(@"Failed downloading image with error %@", [error localizedDescription]);
     }];
 }
 
@@ -149,7 +149,7 @@
 - (PannableCardView *)nextCardViewToShow:(CardsStackView *)stackView {
     NSUInteger randomIndex = arc4random() % [self.places count];
     Place *randomPlace = [self.places objectAtIndex:randomIndex];
-    NSLog(@"Random place %@", randomPlace.title);
+//    DLog(@"Random place %@", randomPlace.title);
     
     PlaceView *newCardView = [[PlaceView alloc] initWithFrame:stackView.bounds];
     newCardView.delegate = stackView;
@@ -189,7 +189,7 @@
     
     // TODO: Delete item from core data as well
     
-    NSLog(@"Number of places left %lu", (unsigned long)self.places.count);
+//    DLog(@"Number of places left %lu", (unsigned long)self.places.count);
 }
 
 - (void)stackView:(CardsStackView *)stackView didSwipeCardViewRight:(PannableCardView *)cardView {

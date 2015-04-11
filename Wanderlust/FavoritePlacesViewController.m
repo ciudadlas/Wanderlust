@@ -70,7 +70,7 @@ static NSString *const CellIdentifier = @"FavoritePlaceTableViewCell";
 - (void)getData {
     NSError *error;
     if (![[self fetchedResultsController] performFetch:&error]) {
-        NSLog(@"Error fetching favorite places %@", [error localizedDescription]);
+        DLog(@"Error fetching favorite places %@", [error localizedDescription]);
     }
 }
 
@@ -132,7 +132,7 @@ static NSString *const CellIdentifier = @"FavoritePlaceTableViewCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     id sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
-    NSLog(@"Number of objects :%lu", (unsigned long)[sectionInfo numberOfObjects]);
+    DLog(@"Number of objects :%lu", (unsigned long)[sectionInfo numberOfObjects]);
     return [sectionInfo numberOfObjects];
 }
 

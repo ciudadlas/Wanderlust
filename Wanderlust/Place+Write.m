@@ -102,7 +102,7 @@
         DLog(@"Error saving the context: %@", [error localizedDescription]);
         return NO;
     } else {
-        NSLog(@"Succesfully favorited object");
+        DLog(@"Succesfully favorited object");
         return YES;
     }
 }
