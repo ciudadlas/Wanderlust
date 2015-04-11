@@ -24,19 +24,25 @@
     NSNumber *latitude = [NSNumber numberWithFloat:[[infoDictionary objectForKey:@"latitude"] floatValue]];
     NSNumber *longitude = [NSNumber numberWithFloat:[[infoDictionary objectForKey:@"longitude"] floatValue]];
     
-    // Here check if id already exists in Core Data before saving
+    // Here check if a place with this ID already is stored, to avoid duplicate items stored
+    item = [self placeWithID:placeID inManagedObjectContext:context];
     
-    // Require all the fields to be valid for creating a new object
-    if (placeID && title && imagePath && address && latitude && longitude) {
+    // If not, create a new object and set the id on it
+    if (!item && placeID) {
         item = [NSEntityDescription insertNewObjectForEntityForName:@"Place" inManagedObjectContext:context];
         item.placeID = placeID;
+    }
+    
+    // Require all the fields to be valid for creating a new object
+    if (title && imagePath && address && latitude && longitude) {
         item.title = title;
         item.address = address;
         item.latitude = latitude;
         item.longitude = longitude;
         item.imagePath = imagePath;
     }
-
+    
+    // If have an item, save it
     if (item) {
         NSError *error = nil;
         [context save:&error];
@@ -60,6 +66,31 @@
     return places;
 }
 
++ (Place *)placeWithID:(NSNumber *)placeId inManagedObjectContext:(NSManagedObjectContext *)context {
+    Place *returnValue = nil;
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Place" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"placeID == %@", placeId];
+    
+    [fetchRequest setSortDescriptors:nil];
+    
+    NSError *error;
+    NSArray *results = [context executeFetchRequest:fetchRequest error:&error];
+    
+    if(!error) {
+        if (results.count != 0) {
+            returnValue =  [results firstObject];
+        }
+    } else {
+        DLog(@"Error saving the context: %@", [error localizedDescription]);
+    }
+    
+    return returnValue;
+}
+
 #pragma mark - Instance Methods
 
 - (BOOL)setFavorited:(BOOL)favorited inManagedObjectContext:(NSManagedObjectContext *)context {
@@ -71,6 +102,7 @@
         DLog(@"Error saving the context: %@", [error localizedDescription]);
         return NO;
     } else {
+        NSLog(@"Succesfully favorited object");
         return YES;
     }
 }

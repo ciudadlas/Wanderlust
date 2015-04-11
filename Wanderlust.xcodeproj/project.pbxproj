@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75183F511AD9582500C85786 /* FavoritePlaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75183F501AD9582500C85786 /* FavoritePlaceTableViewCell.m */; };
 		752200191AD5FE4300FAFFE4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 752200181AD5FE4300FAFFE4 /* main.m */; };
 		7522001C1AD5FE4300FAFFE4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7522001B1AD5FE4300FAFFE4 /* AppDelegate.m */; };
 		7522001F1AD5FE4300FAFFE4 /* Wanderlust.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7522001D1AD5FE4300FAFFE4 /* Wanderlust.xcdatamodeld */; };
@@ -20,6 +21,7 @@
 		7522004E1AD63EF900FAFFE4 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7522004D1AD63EF900FAFFE4 /* APIClient.m */; };
 		752200531AD6484800FAFFE4 /* Place+Write.m in Sources */ = {isa = PBXBuildFile; fileRef = 752200521AD6484800FAFFE4 /* Place+Write.m */; };
 		7561D4311AD8DC65002FBAAD /* FavoritePlacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7561D4301AD8DC65002FBAAD /* FavoritePlacesViewController.m */; };
+		7561D43C1AD91390002FBAAD /* ExplorePlacesCustomAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7561D43B1AD91390002FBAAD /* ExplorePlacesCustomAnimator.m */; };
 		75B7F2401AD65BFF000E1640 /* Place+Read.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B7F23F1AD65BFF000E1640 /* Place+Read.m */; };
 		75B7F2461AD672B3000E1640 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B7F2451AD672B3000E1640 /* MapViewController.m */; };
 		75B7F24F1AD6F052000E1640 /* PlaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B7F24E1AD6F052000E1640 /* PlaceView.m */; };
@@ -39,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		4F0F2F94A111CD78AC4818FC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		75183F4F1AD9582500C85786 /* FavoritePlaceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritePlaceTableViewCell.h; sourceTree = "<group>"; };
+		75183F501AD9582500C85786 /* FavoritePlaceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritePlaceTableViewCell.m; sourceTree = "<group>"; };
 		752200131AD5FE4300FAFFE4 /* Wanderlust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wanderlust.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		752200171AD5FE4300FAFFE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		752200181AD5FE4300FAFFE4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -64,6 +68,8 @@
 		752200521AD6484800FAFFE4 /* Place+Write.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Place+Write.m"; sourceTree = "<group>"; };
 		7561D42F1AD8DC65002FBAAD /* FavoritePlacesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritePlacesViewController.h; sourceTree = "<group>"; };
 		7561D4301AD8DC65002FBAAD /* FavoritePlacesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritePlacesViewController.m; sourceTree = "<group>"; };
+		7561D43A1AD91390002FBAAD /* ExplorePlacesCustomAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExplorePlacesCustomAnimator.h; sourceTree = "<group>"; };
+		7561D43B1AD91390002FBAAD /* ExplorePlacesCustomAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExplorePlacesCustomAnimator.m; sourceTree = "<group>"; };
 		75B7F23E1AD65BFF000E1640 /* Place+Read.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Place+Read.h"; sourceTree = "<group>"; };
 		75B7F23F1AD65BFF000E1640 /* Place+Read.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Place+Read.m"; sourceTree = "<group>"; };
 		75B7F2441AD672B3000E1640 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -226,6 +232,8 @@
 			children = (
 				752200201AD5FE4300FAFFE4 /* ExplorePlacesViewController.h */,
 				752200211AD5FE4300FAFFE4 /* ExplorePlacesViewController.m */,
+				7561D43A1AD91390002FBAAD /* ExplorePlacesCustomAnimator.h */,
+				7561D43B1AD91390002FBAAD /* ExplorePlacesCustomAnimator.m */,
 				752200461AD638A700FAFFE4 /* Cards Stack View */,
 			);
 			name = "01 - Explore Places";
@@ -245,6 +253,8 @@
 			children = (
 				7561D42F1AD8DC65002FBAAD /* FavoritePlacesViewController.h */,
 				7561D4301AD8DC65002FBAAD /* FavoritePlacesViewController.m */,
+				75183F4F1AD9582500C85786 /* FavoritePlaceTableViewCell.h */,
+				75183F501AD9582500C85786 /* FavoritePlaceTableViewCell.m */,
 			);
 			name = "03 - Favorite Places";
 			sourceTree = "<group>";
@@ -401,10 +411,12 @@
 				7561D4311AD8DC65002FBAAD /* FavoritePlacesViewController.m in Sources */,
 				752200221AD5FE4300FAFFE4 /* ExplorePlacesViewController.m in Sources */,
 				7522001F1AD5FE4300FAFFE4 /* Wanderlust.xcdatamodeld in Sources */,
+				7561D43C1AD91390002FBAAD /* ExplorePlacesCustomAnimator.m in Sources */,
 				752200531AD6484800FAFFE4 /* Place+Write.m in Sources */,
 				75B7F24F1AD6F052000E1640 /* PlaceView.m in Sources */,
 				7522004E1AD63EF900FAFFE4 /* APIClient.m in Sources */,
 				75B7F2461AD672B3000E1640 /* MapViewController.m in Sources */,
+				75183F511AD9582500C85786 /* FavoritePlaceTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

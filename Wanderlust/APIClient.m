@@ -11,7 +11,12 @@
 #import "Place+Write.h"
 #import "AppDelegate.h"
 
-static NSString *const GetLocationsURLPath = @"https://gist.githubusercontent.com/shreyansb/678d35d7efaa4cbfb81d/raw/7e04c3d88f6c06d7a794ae570f39a96107b18457/gistfile1.json";
+// Seem to be having occasional errors with this URL during network request, seems related to content-type being served by the service
+//static NSString *const GetLocationsURLPath = @"https://gist.githubusercontent.com/shreyansb/678d35d7efaa4cbfb81d/raw/7e04c3d88f6c06d7a794ae570f39a96107b18457/gistfile1.json";
+
+// Same contents as original URL, but not having issues with this URL so far
+static NSString *const GetLocationsURLPath = @"https://api.myjson.com/bins/4i8cl";
+
 
 @implementation APIClient
 
@@ -33,8 +38,6 @@ static NSString *const GetLocationsURLPath = @"https://gist.githubusercontent.co
     
     if (self) {
         self.responseSerializer = [AFJSONResponseSerializer serializer];
-        self.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/plain"];
-        
         self.requestSerializer = [AFJSONRequestSerializer serializer];
     }
     

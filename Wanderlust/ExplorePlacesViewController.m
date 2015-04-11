@@ -9,21 +9,24 @@
 #import "ExplorePlacesViewController.h"
 #import "APIClient.h"
 #import "Macros.h"
-#import <SVProgressHUD/SVProgressHUD.h>
-#import <UIImageView+AFNetworking.h>
 #import "Place+Read.h"
 #import "Place+Write.h"
 #import "MapViewController.h"
 #import "PlaceView.h"
 #import "AppDelegate.h"
+#import "FavoritePlacesViewController.h"
+#import <SVProgressHUD/SVProgressHUD.h>
+#import <UIImageView+AFNetworking.h>
+#import "ExplorePlacesCustomAnimator.h"
 
-@interface ExplorePlacesViewController ()
+
+@interface ExplorePlacesViewController () <UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet CardsStackView *cardsStack;
 @property (weak, nonatomic) PlaceView *cardOnTop;
 @property (weak, nonatomic) IBOutlet UILabel *placeName;
 @property (weak, nonatomic) IBOutlet UILabel *placeAddress;
-@property (weak, nonatomic) IBOutlet UIButton *seeFavoritesButton;
+@property (weak, nonatomic) IBOutlet UIButton *viewFavoritesButton;
 
 @property (strong, nonatomic) NSMutableArray *places;
 
@@ -44,6 +47,18 @@
     
     if (!self.places) {
         [self getPlaces];
+    }
+    
+    // Set ourself as the navigation controller's delegate so we're asked for a transitioning object
+    self.navigationController.delegate = self;
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    // Stop being the navigation controller's delegate
+    if (self.navigationController.delegate == self) {
+        self.navigationController.delegate = nil;
     }
 }
 
@@ -66,9 +81,14 @@
     self.cardsStack.delegate = self;
     self.cardsStack.dataSource = self;
     
+    self.viewFavoritesButton.layer.cornerRadius = 5;
+    
     // Don't show any text while items are loading
     self.placeAddress.text = @"";
     self.placeName.text = @"";
+    
+    // Assign navigation controller delegate
+    self.navigationController.delegate = self;
 }
 
 #pragma mark - Get Data Helper Methods
@@ -87,7 +107,9 @@
             
             [SVProgressHUD showSuccessWithStatus:@"Success!"];
         } else {
-            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Error getting places: %@", [error localizedDescription]]];
+            NSString *errorMessage = [NSString stringWithFormat:@"Error getting places: %@ %@", [error localizedDescription], [error userInfo]];
+            [SVProgressHUD showErrorWithStatus:errorMessage];
+            DLog(@"%@", errorMessage);
         }
     }];
 }
@@ -165,7 +187,7 @@
     PlaceView *placeView = (PlaceView *)cardView;
     [self.places removeObject:placeView.place];
     
-    // Delete item from core data as well
+    // TODO: Delete item from core data as well
     
     NSLog(@"Number of places left %lu", (unsigned long)self.places.count);
 }
@@ -181,7 +203,20 @@
     [place setFavorited:YES inManagedObjectContext:delegate.managedObjectContext];
 }
 
-#pragma mark - Storyboard Segue
+#pragma mark - UINavigationControllerDelegate methods
+
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
+    
+    // Check if we're transitioning from this view controller to the favorite places view controller
+    // If so return our custom animator object for the transition animation
+    if (fromVC == self && [toVC isKindOfClass:[FavoritePlacesViewController class]]) {
+        return [[ExplorePlacesCustomAnimator alloc] init];
+    } else {
+        return nil;
+    }
+}
+
+#pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"MapViewControllerSegue"]) {
