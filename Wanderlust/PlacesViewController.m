@@ -129,6 +129,14 @@
     PlaceView *newCardView = [[PlaceView alloc] initWithFrame:stackView.bounds];
     newCardView.delegate = stackView;
     newCardView.place = randomPlace;
+
+    UIImageView *leftOverlayView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_large"]];
+    leftOverlayView.center = CGPointMake(stackView.bounds.size.width / 2, stackView.bounds.size.height / 2);
+    newCardView.leftSwipeOverlayView = leftOverlayView;
+    
+    UIImageView *rightOverlayView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_large"]];
+    rightOverlayView.center = CGPointMake(stackView.bounds.size.width / 2, stackView.bounds.size.height / 2);
+    newCardView.rightSwipeOverlayView = rightOverlayView;
     
     [self setImageForImageView:newCardView.imageView withPlace:randomPlace];
     

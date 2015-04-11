@@ -18,10 +18,14 @@ static CGFloat const RotationStrength = 320;      // Strength of rotation. Highe
 static CGFloat const RotationMax = 1;             // The maximum rotation allowed in radians.  Higher value means card can keep rotating longer
 static CGFloat const RotationAngle = M_PI/8;      // Higher value means stronger rotation angle
 
+static CGFloat const OverlayOpacitySensitivity = 100;      // Higher value means slower overlay opacity change as user swipes left or right
+
 @interface PannableCardView()
 
 @property (strong, nonatomic) UIGestureRecognizer *panGestureRecognizer;
 @property (strong, nonatomic) UITapGestureRecognizer *tapGestureRecognizer;
+@property (strong, nonatomic) UIView *overlayView;
+
 @property (nonatomic) CGPoint originalCenter;
 @property (nonatomic) CGFloat xFromCenter;
 @property (nonatomic) CGFloat yFromCenter;
@@ -62,7 +66,6 @@ static CGFloat const RotationAngle = M_PI/8;      // Higher value means stronger
     self.layer.allowsEdgeAntialiasing = YES;
     
     self.backgroundColor = HEXCOLOR(0xF4D338);
-    
     self.clipsToBounds = YES;
     
     self.imageView = [[UIImageView alloc] init];
@@ -81,6 +84,32 @@ static CGFloat const RotationAngle = M_PI/8;      // Higher value means stronger
 - (void)resetView {
     self.center = self.originalCenter;
     self.transform = CGAffineTransformIdentity;
+    self.overlayView.alpha = 0;
+}
+
+#pragma mark - View Update Methods
+
+- (void)updateOverlayView {
+    
+    // Set the correct overlay view depending on swipe direction
+    if (self.xFromCenter < 0) {
+        if (self.overlayView != self.leftSwipeOverlayView) {
+            self.overlayView = self.leftSwipeOverlayView;
+            [self addSubview:self.overlayView];
+        }
+    } else if (self.xFromCenter > 0) {
+        if (self.overlayView != self.rightSwipeOverlayView) {
+            self.overlayView = self.rightSwipeOverlayView;
+            [self addSubview:self.overlayView];
+        }
+    } else if (self.xFromCenter == 0) {
+        self.overlayView = nil;
+    }
+
+    // Update alpha of the overlay view based on distance from center
+    float absoluteDistance = fabsf(self.xFromCenter);
+    float alphaValue = MIN(absoluteDistance/OverlayOpacitySensitivity, 1.0);
+    self.overlayView.alpha = alphaValue;
 }
 
 #pragma mark - Gesture Recognizer Actions
@@ -133,6 +162,8 @@ static CGFloat const RotationAngle = M_PI/8;      // Higher value means stronger
     CGAffineTransform scaleTransform = CGAffineTransformScale(transform, scale, scale);
     
     self.transform = scaleTransform;
+    
+    [self updateOverlayView];
 }
 
 - (void)handleSwipeEnd:(UIPanGestureRecognizer *)gectureRecognizer {

@@ -34,6 +34,9 @@
 @interface PannableCardView : UIView
 
 @property (strong, nonatomic) UIImageView *imageView;
+@property (strong, nonatomic) UIView *rightSwipeOverlayView;
+@property (strong, nonatomic) UIView *leftSwipeOverlayView;
+
 @property (weak, nonatomic) id <PannableCardViewDelegate> delegate;
 
 @end

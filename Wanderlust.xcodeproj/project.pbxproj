@@ -19,6 +19,7 @@
 		752200441AD5FF6200FAFFE4 /* PannableCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 752200431AD5FF6200FAFFE4 /* PannableCardView.m */; };
 		7522004E1AD63EF900FAFFE4 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7522004D1AD63EF900FAFFE4 /* APIClient.m */; };
 		752200531AD6484800FAFFE4 /* Place+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 752200521AD6484800FAFFE4 /* Place+Create.m */; };
+		7561D4311AD8DC65002FBAAD /* FavoritePlacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7561D4301AD8DC65002FBAAD /* FavoritePlacesViewController.m */; };
 		75B7F2401AD65BFF000E1640 /* Place+Read.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B7F23F1AD65BFF000E1640 /* Place+Read.m */; };
 		75B7F2461AD672B3000E1640 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B7F2451AD672B3000E1640 /* MapViewController.m */; };
 		75B7F24F1AD6F052000E1640 /* PlaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B7F24E1AD6F052000E1640 /* PlaceView.m */; };
@@ -61,6 +62,8 @@
 		7522004D1AD63EF900FAFFE4 /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
 		752200511AD6484800FAFFE4 /* Place+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Place+Create.h"; sourceTree = "<group>"; };
 		752200521AD6484800FAFFE4 /* Place+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Place+Create.m"; sourceTree = "<group>"; };
+		7561D42F1AD8DC65002FBAAD /* FavoritePlacesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritePlacesViewController.h; sourceTree = "<group>"; };
+		7561D4301AD8DC65002FBAAD /* FavoritePlacesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritePlacesViewController.m; sourceTree = "<group>"; };
 		75B7F23E1AD65BFF000E1640 /* Place+Read.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Place+Read.h"; sourceTree = "<group>"; };
 		75B7F23F1AD65BFF000E1640 /* Place+Read.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Place+Read.m"; sourceTree = "<group>"; };
 		75B7F2441AD672B3000E1640 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -130,8 +133,8 @@
 				752200211AD5FE4300FAFFE4 /* PlacesViewController.m */,
 				75B7F2441AD672B3000E1640 /* MapViewController.h */,
 				75B7F2451AD672B3000E1640 /* MapViewController.m */,
-				75B7F24D1AD6F052000E1640 /* PlaceView.h */,
-				75B7F24E1AD6F052000E1640 /* PlaceView.m */,
+				7561D42F1AD8DC65002FBAAD /* FavoritePlacesViewController.h */,
+				7561D4301AD8DC65002FBAAD /* FavoritePlacesViewController.m */,
 				752200461AD638A700FAFFE4 /* Cards Stack View */,
 				752200471AD6393B00FAFFE4 /* Data Layer */,
 				752200451AD6048B00FAFFE4 /* Macros.h */,
@@ -176,6 +179,8 @@
 				752200401AD5FF3300FAFFE4 /* CardsStackView.m */,
 				752200421AD5FF6200FAFFE4 /* PannableCardView.h */,
 				752200431AD5FF6200FAFFE4 /* PannableCardView.m */,
+				75B7F24D1AD6F052000E1640 /* PlaceView.h */,
+				75B7F24E1AD6F052000E1640 /* PlaceView.m */,
 			);
 			name = "Cards Stack View";
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 				75B7F2521AD70D3C000E1640 /* Place.m in Sources */,
 				752200191AD5FE4300FAFFE4 /* main.m in Sources */,
 				75B7F2401AD65BFF000E1640 /* Place+Read.m in Sources */,
+				7561D4311AD8DC65002FBAAD /* FavoritePlacesViewController.m in Sources */,
 				752200221AD5FE4300FAFFE4 /* PlacesViewController.m in Sources */,
 				7522001F1AD5FE4300FAFFE4 /* Wanderlust.xcdatamodeld in Sources */,
 				752200531AD6484800FAFFE4 /* Place+Create.m in Sources */,
