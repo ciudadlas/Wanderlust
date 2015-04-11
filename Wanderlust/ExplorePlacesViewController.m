@@ -16,9 +16,8 @@
 #import "AppDelegate.h"
 #import "FavoritePlacesViewController.h"
 #import <SVProgressHUD/SVProgressHUD.h>
-#import <UIImageView+AFNetworking.h>
 #import "ExplorePlacesCustomAnimator.h"
-
+#import "UIImageView+AFNetworkingFadeInAdditions.h"
 
 @interface ExplorePlacesViewController () <UINavigationControllerDelegate>
 
@@ -118,27 +117,6 @@
     }];
 }
 
-- (void)setImageForImageView:(UIImageView *)view withPlace:(Place *)place {
-    
-    __weak UIImageView *weakImageView = view;
-    NSURLRequest *request = [NSURLRequest requestWithURL:place.imageDownloadURL];
-    [view setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-        UIImageView *strongImageView = weakImageView;
-        if (!strongImageView) return;
-        
-        [UIView transitionWithView:strongImageView
-                          duration:0.3
-                           options:UIViewAnimationOptionTransitionCrossDissolve
-                        animations:^{
-                            strongImageView.image = image;
-                        }
-                        completion:NULL];
-        
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
-        DLog(@"Failed downloading image with error %@", [error localizedDescription]);
-    }];
-}
-
 #pragma mark - CardsStackViewDataSource Methods
 
 - (NSInteger)numberOfCardsOnStack:(CardsStackView *)stackView {
@@ -167,7 +145,7 @@
     rightOverlayView.center = CGPointMake(stackView.bounds.size.width / 2, stackView.bounds.size.height / 2);
     newCardView.rightSwipeOverlayView = rightOverlayView;
     
-    [self setImageForImageView:newCardView.imageView withPlace:randomPlace];
+    [newCardView.imageView setImageWithURL:randomPlace.imageDownloadURL placeholderImage:nil fadeInWithDuration:0.3];
     
     return newCardView;
 }
