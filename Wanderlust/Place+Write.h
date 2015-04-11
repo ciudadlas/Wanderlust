@@ -8,8 +8,9 @@
 
 #import "Place.h"
 
-@interface Place (Create)
+@interface Place (Write)
 
 + (NSArray *)placesWithDataArray:(NSArray *)placesArray inManagedObjectContext:(NSManagedObjectContext *)context;
+- (BOOL)setFavorited:(BOOL)favorited inManagedObjectContext:(NSManagedObjectContext *)context;
 
 @end

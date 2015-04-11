@@ -6,10 +6,12 @@
 //  Copyright (c) 2015 Serdar Karatekin. All rights reserved.
 //
 
-#import "Place+Create.h"
+#import "Place+Write.h"
 #import "Macros.h"
 
-@implementation Place (Create)
+@implementation Place (Write)
+
+#pragma mark - Class Methods
 
 + (Place *)placeWithInfo:(NSDictionary *)infoDictionary inManagedObjectContext:(NSManagedObjectContext *)context {
     
@@ -24,6 +26,7 @@
     
     // Here check if id already exists in Core Data before saving
     
+    // Require all the fields to be valid for creating a new object
     if (placeID && title && imagePath && address && latitude && longitude) {
         item = [NSEntityDescription insertNewObjectForEntityForName:@"Place" inManagedObjectContext:context];
         item.placeID = placeID;
@@ -55,6 +58,21 @@
     }
     
     return places;
+}
+
+#pragma mark - Instance Methods
+
+- (BOOL)setFavorited:(BOOL)favorited inManagedObjectContext:(NSManagedObjectContext *)context {
+    self.isFavorited = [NSNumber numberWithBool:favorited];
+    
+    NSError *error = nil;
+    [context save:&error];
+    if (error) {
+        DLog(@"Error saving the context: %@", [error localizedDescription]);
+        return NO;
+    } else {
+        return YES;
+    }
 }
 
 @end

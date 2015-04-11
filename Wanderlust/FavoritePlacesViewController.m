@@ -14,6 +14,8 @@
 
 @implementation FavoritePlacesViewController
 
+#pragma mark - View Lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -22,6 +24,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - IBAction Methods
+
+- (IBAction)tappedCloseButton:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*

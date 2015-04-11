@@ -12,8 +12,10 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <UIImageView+AFNetworking.h>
 #import "Place+Read.h"
+#import "Place+Write.h"
 #import "MapViewController.h"
 #import "PlaceView.h"
+#import "AppDelegate.h"
 
 @interface PlacesViewController ()
 
@@ -21,6 +23,7 @@
 @property (weak, nonatomic) PlaceView *cardOnTop;
 @property (weak, nonatomic) IBOutlet UILabel *placeName;
 @property (weak, nonatomic) IBOutlet UILabel *placeAddress;
+@property (weak, nonatomic) IBOutlet UIButton *seeFavoritesButton;
 
 @property (strong, nonatomic) NSMutableArray *places;
 
@@ -56,7 +59,7 @@
     self.placeName.minimumScaleFactor = 8.0 / self.placeName.font.pointSize;
     self.placeName.adjustsFontSizeToFitWidth = YES;
     
-    self.placeAddress.numberOfLines = 1;
+    self.placeAddress.numberOfLines = 2;
     self.placeAddress.minimumScaleFactor = 8.0 / self.placeName.font.pointSize;
     self.placeAddress.adjustsFontSizeToFitWidth = YES;
     
@@ -162,17 +165,20 @@
     PlaceView *placeView = (PlaceView *)cardView;
     [self.places removeObject:placeView.place];
     
+    // Delete item from core data as well
+    
     NSLog(@"Number of places left %lu", (unsigned long)self.places.count);
 }
 
 - (void)stackView:(CardsStackView *)stackView didSwipeCardViewRight:(PannableCardView *)cardView {
-    // Favorite the item
+
+    // Favorite the place that is right swiped
     
     PlaceView *placeView = (PlaceView *)cardView;
     Place *place = placeView.place;
-    place.isFavorited = [NSNumber numberWithBool:YES];
     
-    NSLog(@"Number of places left %lu", (unsigned long)self.places.count);
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    [place setFavorited:YES inManagedObjectContext:delegate.managedObjectContext];
 }
 
 #pragma mark - Storyboard Segue

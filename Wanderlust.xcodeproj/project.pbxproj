@@ -18,7 +18,7 @@
 		752200411AD5FF3300FAFFE4 /* CardsStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 752200401AD5FF3300FAFFE4 /* CardsStackView.m */; };
 		752200441AD5FF6200FAFFE4 /* PannableCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 752200431AD5FF6200FAFFE4 /* PannableCardView.m */; };
 		7522004E1AD63EF900FAFFE4 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7522004D1AD63EF900FAFFE4 /* APIClient.m */; };
-		752200531AD6484800FAFFE4 /* Place+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 752200521AD6484800FAFFE4 /* Place+Create.m */; };
+		752200531AD6484800FAFFE4 /* Place+Write.m in Sources */ = {isa = PBXBuildFile; fileRef = 752200521AD6484800FAFFE4 /* Place+Write.m */; };
 		7561D4311AD8DC65002FBAAD /* FavoritePlacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7561D4301AD8DC65002FBAAD /* FavoritePlacesViewController.m */; };
 		75B7F2401AD65BFF000E1640 /* Place+Read.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B7F23F1AD65BFF000E1640 /* Place+Read.m */; };
 		75B7F2461AD672B3000E1640 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B7F2451AD672B3000E1640 /* MapViewController.m */; };
@@ -60,8 +60,8 @@
 		752200451AD6048B00FAFFE4 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
 		7522004C1AD63EF900FAFFE4 /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
 		7522004D1AD63EF900FAFFE4 /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
-		752200511AD6484800FAFFE4 /* Place+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Place+Create.h"; sourceTree = "<group>"; };
-		752200521AD6484800FAFFE4 /* Place+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Place+Create.m"; sourceTree = "<group>"; };
+		752200511AD6484800FAFFE4 /* Place+Write.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Place+Write.h"; sourceTree = "<group>"; };
+		752200521AD6484800FAFFE4 /* Place+Write.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Place+Write.m"; sourceTree = "<group>"; };
 		7561D42F1AD8DC65002FBAAD /* FavoritePlacesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritePlacesViewController.h; sourceTree = "<group>"; };
 		7561D4301AD8DC65002FBAAD /* FavoritePlacesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritePlacesViewController.m; sourceTree = "<group>"; };
 		75B7F23E1AD65BFF000E1640 /* Place+Read.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Place+Read.h"; sourceTree = "<group>"; };
@@ -209,8 +209,8 @@
 				7522001D1AD5FE4300FAFFE4 /* Wanderlust.xcdatamodeld */,
 				75B7F2501AD70D3C000E1640 /* Place.h */,
 				75B7F2511AD70D3C000E1640 /* Place.m */,
-				752200511AD6484800FAFFE4 /* Place+Create.h */,
-				752200521AD6484800FAFFE4 /* Place+Create.m */,
+				752200511AD6484800FAFFE4 /* Place+Write.h */,
+				752200521AD6484800FAFFE4 /* Place+Write.m */,
 				75B7F23E1AD65BFF000E1640 /* Place+Read.h */,
 				75B7F23F1AD65BFF000E1640 /* Place+Read.m */,
 			);
@@ -369,7 +369,7 @@
 				7561D4311AD8DC65002FBAAD /* FavoritePlacesViewController.m in Sources */,
 				752200221AD5FE4300FAFFE4 /* PlacesViewController.m in Sources */,
 				7522001F1AD5FE4300FAFFE4 /* Wanderlust.xcdatamodeld in Sources */,
-				752200531AD6484800FAFFE4 /* Place+Create.m in Sources */,
+				752200531AD6484800FAFFE4 /* Place+Write.m in Sources */,
 				75B7F24F1AD6F052000E1640 /* PlaceView.m in Sources */,
 				7522004E1AD63EF900FAFFE4 /* APIClient.m in Sources */,
 				75B7F2461AD672B3000E1640 /* MapViewController.m in Sources */,
