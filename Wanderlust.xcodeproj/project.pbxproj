@@ -158,10 +158,6 @@
 				7561D4331AD90FB2002FBAAD /* 01 - Explore Places */,
 				7561D4341AD90FC9002FBAAD /* 02 - Map */,
 				7561D4351AD90FDC002FBAAD /* 03 - Favorite Places */,
-				752200451AD6048B00FAFFE4 /* Macros.h */,
-				752200231AD5FE4300FAFFE4 /* Main.storyboard */,
-				752200261AD5FE4300FAFFE4 /* Images.xcassets */,
-				752200281AD5FE4300FAFFE4 /* LaunchScreen.xib */,
 				752200161AD5FE4300FAFFE4 /* Supporting Files */,
 			);
 			path = Wanderlust;
@@ -170,6 +166,10 @@
 		752200161AD5FE4300FAFFE4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				752200451AD6048B00FAFFE4 /* Macros.h */,
+				752200231AD5FE4300FAFFE4 /* Main.storyboard */,
+				752200261AD5FE4300FAFFE4 /* Images.xcassets */,
+				752200281AD5FE4300FAFFE4 /* LaunchScreen.xib */,
 				752200171AD5FE4300FAFFE4 /* Info.plist */,
 				752200181AD5FE4300FAFFE4 /* main.m */,
 			);
