@@ -40,9 +40,6 @@
     [super viewDidLoad];
     
     [self setupView];
-    
-    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    self.managedObjectContext = delegate.managedObjectContext;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -92,6 +89,11 @@
     
     // Assign navigation controller delegate
     self.navigationController.delegate = self;
+    
+    if (!self.managedObjectContext) {
+        AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+        self.managedObjectContext = delegate.managedObjectContext;
+    }
 }
 
 #pragma mark - Get Data Helper Methods

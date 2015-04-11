@@ -22,6 +22,7 @@ static NSString *const CellIdentifier = @"FavoritePlaceTableViewCell";
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end
 
@@ -68,6 +69,11 @@ static NSString *const CellIdentifier = @"FavoritePlaceTableViewCell";
 #pragma mark - Get Data Methods
 
 - (void)getData {
+    if (!self.managedObjectContext) {
+        AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+        self.managedObjectContext = delegate.managedObjectContext;        
+    }
+    
     NSError *error;
     if (![[self fetchedResultsController] performFetch:&error]) {
         DLog(@"Error fetching favorite places %@", [error localizedDescription]);
@@ -98,15 +104,13 @@ static NSString *const CellIdentifier = @"FavoritePlaceTableViewCell";
 
 - (NSFetchedResultsController *)fetchedResultsController {
     
-    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-    
     if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
     }
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription
-                                   entityForName:@"Place" inManagedObjectContext:delegate.managedObjectContext];
+                                   entityForName:@"Place" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     fetchRequest.predicate = [NSPredicate predicateWithFormat:@"isFavorited == %@", [NSNumber numberWithBool:YES]];
     
@@ -116,7 +120,7 @@ static NSString *const CellIdentifier = @"FavoritePlaceTableViewCell";
 
     NSFetchedResultsController *theFetchedResultsController =
     [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
-                                        managedObjectContext:delegate.managedObjectContext sectionNameKeyPath:nil
+                                        managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil
                                                    cacheName:nil];
     self.fetchedResultsController = theFetchedResultsController;
     _fetchedResultsController.delegate = self;
