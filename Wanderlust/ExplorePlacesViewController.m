@@ -86,10 +86,7 @@
     // Don't show any text while items are loading
     self.placeAddress.text = @"";
     self.placeName.text = @"";
-    
-    // Assign navigation controller delegate
-    self.navigationController.delegate = self;
-    
+        
     if (!self.managedObjectContext) {
         AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
         self.managedObjectContext = delegate.managedObjectContext;
