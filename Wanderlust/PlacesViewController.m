@@ -113,7 +113,7 @@
 #pragma mark - CardsStackViewDataSource Methods
 
 - (NSInteger)numberOfCardsOnStack:(CardsStackView *)stackView {
-    // Only when we have data for places, we want the cards stack to load cards
+    // Only when we have data for places, we want the cards stack to load card views
     if (self.places) {
         return 5;
     } else {
