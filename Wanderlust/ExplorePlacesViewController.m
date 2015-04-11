@@ -29,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *viewFavoritesButton;
 
 @property (strong, nonatomic) NSMutableArray *places;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end
 
@@ -40,6 +41,9 @@
     [super viewDidLoad];
     
     [self setupView];
+    
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    self.managedObjectContext = delegate.managedObjectContext;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -183,13 +187,12 @@
 }
 
 - (void)stackView:(CardsStackView *)stackView didSwipeCardViewLeft:(PannableCardView *)cardView {
+    
     // Discard item from the list
     PlaceView *placeView = (PlaceView *)cardView;
     [self.places removeObject:placeView.place];
     
-    // TODO: Delete item from core data as well
-    
-//    DLog(@"Number of places left %lu", (unsigned long)self.places.count);
+    [placeView.place deletePlaceInManagedObjectContext:self.managedObjectContext];
 }
 
 - (void)stackView:(CardsStackView *)stackView didSwipeCardViewRight:(PannableCardView *)cardView {
@@ -199,8 +202,7 @@
     PlaceView *placeView = (PlaceView *)cardView;
     Place *place = placeView.place;
     
-    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    [place setFavorited:YES inManagedObjectContext:delegate.managedObjectContext];
+    [place setFavorited:YES inManagedObjectContext:self.managedObjectContext];
 }
 
 #pragma mark - UINavigationControllerDelegate methods

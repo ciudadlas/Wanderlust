@@ -107,4 +107,19 @@
     }
 }
 
+- (BOOL)deletePlaceInManagedObjectContext:(NSManagedObjectContext *)context {
+    [context deleteObject:self];
+    
+    NSError *error = nil;
+    [context save:&error];
+    if (error) {
+        DLog(@"Error saving the context: %@", [error localizedDescription]);
+        return NO;
+    } else {
+        DLog(@"Succesfully deleted object");
+        return YES;
+    }
+
+}
+
 @end
