@@ -17,3 +17,4 @@
 - Allow user to un-favorite a place from the list of favorites.
 - Make CardsStackView more customizable by implementing additional delegate methods.
 - Re-factor and improve Core Data layer, and go over its thread-safety. De-couple managed object contexts from the view controllers.
+- After getting new places from the API, consider returning back all places that are stored in Core Data, as opposed to just the currently received ones (Wouldn't actually make a difference in this case since API always returns the same items.)
