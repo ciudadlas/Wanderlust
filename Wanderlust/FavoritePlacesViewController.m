@@ -137,7 +137,6 @@ static NSString *const CellIdentifier = @"FavoritePlaceTableViewCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     id sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
-    DLog(@"Number of favorited objects :%lu", (unsigned long)[sectionInfo numberOfObjects]);
     return [sectionInfo numberOfObjects];
 }
 
