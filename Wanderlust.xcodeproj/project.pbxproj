@@ -127,16 +127,10 @@
 		752200151AD5FE4300FAFFE4 /* Wanderlust */ = {
 			isa = PBXGroup;
 			children = (
-				7522001A1AD5FE4300FAFFE4 /* AppDelegate.h */,
-				7522001B1AD5FE4300FAFFE4 /* AppDelegate.m */,
-				752200201AD5FE4300FAFFE4 /* ExplorePlacesViewController.h */,
-				752200211AD5FE4300FAFFE4 /* ExplorePlacesViewController.m */,
-				75B7F2441AD672B3000E1640 /* MapViewController.h */,
-				75B7F2451AD672B3000E1640 /* MapViewController.m */,
-				7561D42F1AD8DC65002FBAAD /* FavoritePlacesViewController.h */,
-				7561D4301AD8DC65002FBAAD /* FavoritePlacesViewController.m */,
-				752200461AD638A700FAFFE4 /* Cards Stack View */,
-				752200471AD6393B00FAFFE4 /* Data Layer */,
+				7561D4321AD90FA3002FBAAD /* 00 - Core */,
+				7561D4331AD90FB2002FBAAD /* 01 - Explore Places */,
+				7561D4341AD90FC9002FBAAD /* 02 - Map */,
+				7561D4351AD90FDC002FBAAD /* 03 - Favorite Places */,
 				752200451AD6048B00FAFFE4 /* Macros.h */,
 				752200231AD5FE4300FAFFE4 /* Main.storyboard */,
 				752200261AD5FE4300FAFFE4 /* Images.xcassets */,
@@ -215,6 +209,44 @@
 				75B7F23F1AD65BFF000E1640 /* Place+Read.m */,
 			);
 			name = "Data Model";
+			sourceTree = "<group>";
+		};
+		7561D4321AD90FA3002FBAAD /* 00 - Core */ = {
+			isa = PBXGroup;
+			children = (
+				7522001A1AD5FE4300FAFFE4 /* AppDelegate.h */,
+				7522001B1AD5FE4300FAFFE4 /* AppDelegate.m */,
+				752200471AD6393B00FAFFE4 /* Data Layer */,
+			);
+			name = "00 - Core";
+			sourceTree = "<group>";
+		};
+		7561D4331AD90FB2002FBAAD /* 01 - Explore Places */ = {
+			isa = PBXGroup;
+			children = (
+				752200201AD5FE4300FAFFE4 /* ExplorePlacesViewController.h */,
+				752200211AD5FE4300FAFFE4 /* ExplorePlacesViewController.m */,
+				752200461AD638A700FAFFE4 /* Cards Stack View */,
+			);
+			name = "01 - Explore Places";
+			sourceTree = "<group>";
+		};
+		7561D4341AD90FC9002FBAAD /* 02 - Map */ = {
+			isa = PBXGroup;
+			children = (
+				75B7F2441AD672B3000E1640 /* MapViewController.h */,
+				75B7F2451AD672B3000E1640 /* MapViewController.m */,
+			);
+			name = "02 - Map";
+			sourceTree = "<group>";
+		};
+		7561D4351AD90FDC002FBAAD /* 03 - Favorite Places */ = {
+			isa = PBXGroup;
+			children = (
+				7561D42F1AD8DC65002FBAAD /* FavoritePlacesViewController.h */,
+				7561D4301AD8DC65002FBAAD /* FavoritePlacesViewController.m */,
+			);
+			name = "03 - Favorite Places";
 			sourceTree = "<group>";
 		};
 		8A5CF5E65871C569FADE117B /* Frameworks */ = {
