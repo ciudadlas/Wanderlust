@@ -53,8 +53,9 @@ static NSString *const GetLocationsURLPath = @"https://api.myjson.com/bins/4i8cl
         
         DLog(@"Request URL: %@", operation.request.URL);
         
+        // Parse data
         AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-        NSArray *places = [Place placesWithDataArray:responseObject inManagedObjectContext:delegate.managedObjectContext];
+        NSMutableArray *places = [Place placesWithDataArray:responseObject inManagedObjectContext:delegate.managedObjectContext];
         
         [self propagateResponse:@{@"places": places} error:nil withBlock:completionBlock];
         

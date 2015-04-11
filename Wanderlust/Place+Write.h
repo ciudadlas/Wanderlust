@@ -10,7 +10,7 @@
 
 @interface Place (Write)
 
-+ (NSArray *)placesWithDataArray:(NSArray *)placesArray inManagedObjectContext:(NSManagedObjectContext *)context;
++ (NSMutableArray *)placesWithDataArray:(NSArray *)placesArray inManagedObjectContext:(NSManagedObjectContext *)context;
 - (BOOL)setFavorited:(BOOL)favorited inManagedObjectContext:(NSManagedObjectContext *)context;
 - (BOOL)deletePlaceInManagedObjectContext:(NSManagedObjectContext *)context;
 
