@@ -18,7 +18,7 @@ static CGFloat const RotationStrength = 320;      // Strength of rotation. Highe
 static CGFloat const RotationMax = 1;             // The maximum rotation allowed in radians.  Higher value means card can keep rotating longer
 static CGFloat const RotationAngle = M_PI/8;      // Higher value means stronger rotation angle
 
-static CGFloat const OverlayOpacitySensitivity = 100;      // Higher value means slower overlay opacity change as user swipes left or right
+static CGFloat const OverlayOpacitySensitivity = 60;      // Higher value means slower overlay opacity change as user swipes left or right
 
 @interface PannableCardView()
 

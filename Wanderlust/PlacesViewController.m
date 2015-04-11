@@ -130,11 +130,11 @@
     newCardView.delegate = stackView;
     newCardView.place = randomPlace;
 
-    UIImageView *leftOverlayView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_large"]];
+    UIImageView *leftOverlayView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nah_overlay"]];
     leftOverlayView.center = CGPointMake(stackView.bounds.size.width / 2, stackView.bounds.size.height / 2);
     newCardView.leftSwipeOverlayView = leftOverlayView;
     
-    UIImageView *rightOverlayView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_large"]];
+    UIImageView *rightOverlayView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"yea_overlay"]];
     rightOverlayView.center = CGPointMake(stackView.bounds.size.width / 2, stackView.bounds.size.height / 2);
     newCardView.rightSwipeOverlayView = rightOverlayView;
     
