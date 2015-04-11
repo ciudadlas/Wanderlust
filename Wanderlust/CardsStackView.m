@@ -96,7 +96,7 @@
         }
     }
     
-    NSLog(@"Number of cards %i", numberOfCards);
+//    NSLog(@"Number of cards %i", numberOfCards);
 }
 
 @end
