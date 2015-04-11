@@ -18,7 +18,7 @@
 @interface PlacesViewController ()
 
 @property (weak, nonatomic) IBOutlet CardsStackView *cardsStack;
-@property (weak, nonatomic) PannableCardView *cardOnTop;
+@property (weak, nonatomic) PlaceView *cardOnTop;
 @property (weak, nonatomic) IBOutlet UILabel *placeName;
 @property (weak, nonatomic) IBOutlet UILabel *placeAddress;
 
@@ -34,13 +34,6 @@
     [super viewDidLoad];
     
     [self setupView];
-    
-    self.cardsStack.delegate = self;
-    self.cardsStack.dataSource = self;
-    
-    // Don't show any text while items are loading
-    self.placeAddress.text = @"";
-    self.placeName.text = @"";
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -66,6 +59,13 @@
     self.placeAddress.numberOfLines = 1;
     self.placeAddress.minimumScaleFactor = 8.0 / self.placeName.font.pointSize;
     self.placeAddress.adjustsFontSizeToFitWidth = YES;
+    
+    self.cardsStack.delegate = self;
+    self.cardsStack.dataSource = self;
+    
+    // Don't show any text while items are loading
+    self.placeAddress.text = @"";
+    self.placeName.text = @"";
 }
 
 #pragma mark - Get Data Helper Methods
@@ -142,7 +142,7 @@
 
     self.placeName.text = placeView.place.title;
     self.placeAddress.text = placeView.place.address;
-    self.cardOnTop = cardView;
+    self.cardOnTop = (PlaceView *)cardView;
 }
 
 - (void)stackView:(CardsStackView *)stackView didTapOnCardView:(PannableCardView *)cardView {
@@ -159,22 +159,21 @@
 
 - (void)stackView:(CardsStackView *)stackView didSwipeCardViewRight:(PannableCardView *)cardView {
     // Favorite the item
-
-    Place *place = [self.places objectAtIndex:cardView.tag];
+    
+    PlaceView *placeView = (PlaceView *)cardView;
+    Place *place = placeView.place;
     place.isFavorited = [NSNumber numberWithBool:YES];
     
     NSLog(@"Number of places left %lu", (unsigned long)self.places.count);
 }
 
-#pragma mark - View Controller Transition
+#pragma mark - Storyboard Segue
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"MapViewControllerSegue"]) {
 
         MapViewController *mapVC = [segue destinationViewController];
-        Place *place = [self.places objectAtIndex:self.cardOnTop.tag];
-        mapVC.place = place;
+        mapVC.place = self.cardOnTop.place;
     }
 }
 
