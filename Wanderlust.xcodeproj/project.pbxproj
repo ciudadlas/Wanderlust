@@ -113,13 +113,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		75183F521AD9B9D600C85786 /* Navigation Controller Animators */ = {
+		75183F521AD9B9D600C85786 /* View Controller Animators */ = {
 			isa = PBXGroup;
 			children = (
 				7561D43A1AD91390002FBAAD /* ExplorePlacesCustomAnimator.h */,
 				7561D43B1AD91390002FBAAD /* ExplorePlacesCustomAnimator.m */,
 			);
-			name = "Navigation Controller Animators";
+			name = "View Controller Animators";
 			sourceTree = "<group>";
 		};
 		75183F531AD9C10400C85786 /* Helpers */ = {
@@ -244,7 +244,7 @@
 				7522001A1AD5FE4300FAFFE4 /* AppDelegate.h */,
 				7522001B1AD5FE4300FAFFE4 /* AppDelegate.m */,
 				75183F531AD9C10400C85786 /* Helpers */,
-				75183F521AD9B9D600C85786 /* Navigation Controller Animators */,
+				75183F521AD9B9D600C85786 /* View Controller Animators */,
 				752200471AD6393B00FAFFE4 /* Data Layer */,
 			);
 			name = "00 - Core";
