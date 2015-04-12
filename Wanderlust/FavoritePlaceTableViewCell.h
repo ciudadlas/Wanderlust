@@ -10,8 +10,8 @@
 
 @interface FavoritePlaceTableViewCell : UITableViewCell
 
-@property (nonatomic, weak) IBOutlet UIImageView *placeImageView;
-@property (nonatomic, weak) IBOutlet UILabel *placeTitle;
-@property (nonatomic, weak) IBOutlet UILabel *placeAddress;
+@property (weak, nonatomic) IBOutlet UIImageView *placeImageView;
+@property (weak, nonatomic) IBOutlet UILabel *placeTitle;
+@property (weak, nonatomic) IBOutlet UILabel *placeAddress;
 
 @end
