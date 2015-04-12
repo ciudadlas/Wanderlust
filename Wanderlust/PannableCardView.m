@@ -81,13 +81,13 @@ static CGFloat const OverlayOpacitySensitivity = 60;      // Higher value means 
     [self addGestureRecognizer:self.tapGestureRecognizer];
 }
 
+#pragma mark - View Update Methods
+
 - (void)resetView {
     self.center = self.originalCenter;
     self.transform = CGAffineTransformIdentity;
     self.overlayView.alpha = 0;
 }
-
-#pragma mark - View Update Methods
 
 - (void)updateOverlayView {
     
