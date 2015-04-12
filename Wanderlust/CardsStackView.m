@@ -58,7 +58,7 @@
         [self insertSubview:newCardView atIndex:0];
     }
     
-    [self debugPrintNumberOfViewsOnStack];
+    [self debugPrintNumberOfCardViewsOnStack];
 }
 
 - (void)findViewOnTop {
@@ -88,7 +88,7 @@
 
 #pragma mark - Debug Methods
 
-- (void)debugPrintNumberOfViewsOnStack {
+- (void)debugPrintNumberOfCardViewsOnStack {
     int numberOfCards = 0;
     
     for (UIView *view in self.subviews) {
