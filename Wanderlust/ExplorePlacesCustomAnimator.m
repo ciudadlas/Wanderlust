@@ -38,7 +38,7 @@
     UIBezierPath *pathInitial = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, 0, 0)];
     
     // End path
-    CGPoint farAwayPoint = CGPointMake(0, - 2 * CGRectGetHeight(toViewController.view.bounds));
+    CGPoint farAwayPoint = CGPointMake(0, 2 * CGRectGetHeight(toViewController.view.bounds));
     CGFloat radius = sqrt((farAwayPoint.x*farAwayPoint.x) + (farAwayPoint.y*farAwayPoint.y));
     UIBezierPath *pathFinal = [UIBezierPath bezierPathWithOvalInRect:CGRectInset(CGRectMake(0, 0, 0, 0), -radius, -radius)];
 
