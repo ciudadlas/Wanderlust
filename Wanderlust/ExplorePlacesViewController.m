@@ -130,10 +130,8 @@
 - (PannableCardView *)nextCardViewToShow:(CardsStackView *)stackView {
     NSUInteger randomIndex = arc4random() % [self.places count];
     Place *randomPlace = [self.places objectAtIndex:randomIndex];
-//    DLog(@"Random place %@", randomPlace.title);
     
     PlaceView *newCardView = [[PlaceView alloc] initWithFrame:stackView.bounds];
-    newCardView.delegate = stackView;
     newCardView.place = randomPlace;
 
     UIImageView *leftOverlayView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nah_overlay"]];

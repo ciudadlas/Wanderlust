@@ -52,6 +52,7 @@
 - (void)addCardView {
     if ([self.dataSource respondsToSelector:@selector(nextCardViewToShow:)]) {
         PannableCardView *newCardView = [self.dataSource nextCardViewToShow:self];
+        newCardView.delegate = self;
         
         // Add new views to the bottom of the stack, not the top
         [self insertSubview:newCardView atIndex:0];
