@@ -167,7 +167,7 @@
     PlaceView *placeView = (PlaceView *)cardView;
     [self.places removeObject:placeView.place];
     
-    [placeView.place deletePlaceInManagedObjectContext:self.managedObjectContext];
+    [placeView.place deleteInManagedObjectContext:self.managedObjectContext];
 }
 
 - (void)stackView:(CardsStackView *)stackView didSwipeCardViewRight:(PannableCardView *)cardView {

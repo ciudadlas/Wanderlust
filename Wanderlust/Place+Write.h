@@ -12,6 +12,6 @@
 
 + (NSMutableArray *)placesWithDataArray:(NSArray *)placesArray inManagedObjectContext:(NSManagedObjectContext *)context;
 - (BOOL)setFavorited:(BOOL)favorited inManagedObjectContext:(NSManagedObjectContext *)context;
-- (BOOL)deletePlaceInManagedObjectContext:(NSManagedObjectContext *)context;
+- (BOOL)deleteInManagedObjectContext:(NSManagedObjectContext *)context;
 
 @end

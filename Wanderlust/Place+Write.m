@@ -107,7 +107,7 @@
     }
 }
 
-- (BOOL)deletePlaceInManagedObjectContext:(NSManagedObjectContext *)context {
+- (BOOL)deleteInManagedObjectContext:(NSManagedObjectContext *)context {
     [context deleteObject:self];
     
     NSError *error = nil;
