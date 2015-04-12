@@ -46,7 +46,7 @@
 - (void)stackView:(CardsStackView *)stackView didTapOnCardView:(PannableCardView *)cardView;
 
 /**
- * Delegate method that is called when a card view appears at the top of the stack
+ * Delegate method that is called when a card view appears on top of the stack view
  */
 - (void)stackView:(CardsStackView *)stackView cardViewDidAppearOnTopOfStack:(PannableCardView *)cardView;
 
