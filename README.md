@@ -19,3 +19,4 @@
 - Re-factor and improve Core Data layer. De-couple managed object contexts from the view controllers.
 - After getting new places from the API, consider returning back all places that are stored in Core Data, as opposed to just the currently received ones (Wouldn't actually make a difference in this case since API always returns the same items.)
 - Improve favorites table view image loading, by starting to load images only after table view stops scrolling.
+- Consider fetching API data little by little, instead of fetching it all at once
