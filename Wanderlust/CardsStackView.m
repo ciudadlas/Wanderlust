@@ -70,7 +70,15 @@
 }
 
 - (void)reload {
-
+    
+    // Remove all existing card views if any
+    for (UIView *view in self.subviews) {
+        if ([view isKindOfClass:[PannableCardView class]]) {
+            [view removeFromSuperview];
+        }
+    }
+    
+    // Load new card views
     NSInteger numberOfCardsOnStack;
     
     if ([self.dataSource respondsToSelector:@selector(numberOfCardsOnStack:)]) {
@@ -83,6 +91,7 @@
         [self addCardView];
     }
     
+    // Determine the view on top
     [self findViewOnTop];
 }
 

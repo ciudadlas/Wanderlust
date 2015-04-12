@@ -200,8 +200,6 @@
 				752200401AD5FF3300FAFFE4 /* CardsStackView.m */,
 				752200421AD5FF6200FAFFE4 /* PannableCardView.h */,
 				752200431AD5FF6200FAFFE4 /* PannableCardView.m */,
-				75B7F24D1AD6F052000E1640 /* PlaceView.h */,
-				75B7F24E1AD6F052000E1640 /* PlaceView.m */,
 			);
 			name = "Cards Stack View";
 			sourceTree = "<group>";
@@ -255,6 +253,8 @@
 			children = (
 				752200201AD5FE4300FAFFE4 /* ExplorePlacesViewController.h */,
 				752200211AD5FE4300FAFFE4 /* ExplorePlacesViewController.m */,
+				75B7F24D1AD6F052000E1640 /* PlaceView.h */,
+				75B7F24E1AD6F052000E1640 /* PlaceView.m */,
 				752200461AD638A700FAFFE4 /* Cards Stack View */,
 			);
 			name = "01 - Explore Places";
