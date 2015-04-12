@@ -29,7 +29,7 @@
     [super viewWillAppear:animated];
 
     if (self.place) {
-        [self configureViewWithCoordinates:CLLocationCoordinate2DMake([self.place.latitude doubleValue], [self.place.longitude doubleValue])];
+        [self configureView];
     }
 }
 
@@ -40,7 +40,9 @@
 
 #pragma mark - View Setup
 
-- (void)configureViewWithCoordinates:(CLLocationCoordinate2D)coordinates {
+- (void)configureView {
+    
+    CLLocationCoordinate2D coordinates = CLLocationCoordinate2DMake([self.place.latitude doubleValue], [self.place.longitude doubleValue]);
     
     // Zoom map
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(coordinates, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
