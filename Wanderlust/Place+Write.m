@@ -28,22 +28,34 @@
     item = [self placeWithID:placeID inManagedObjectContext:context];
     
     // If not, create a new object and set the id on it
-    if (!item && placeID) {
+    // Require all the fields to exist for creating a new object
+    if (!item && placeID && title && imagePath && address && latitude && longitude) {
         item = [NSEntityDescription insertNewObjectForEntityForName:@"Place" inManagedObjectContext:context];
         item.placeID = placeID;
     }
     
-    // Require all the fields to be valid for creating a new object
-    if (title && imagePath && address && latitude && longitude) {
-        item.title = title;
-        item.address = address;
-        item.latitude = latitude;
-        item.longitude = longitude;
-        item.imagePath = imagePath;
-    }
-    
-    // If have an item, save it
     if (item) {
+        
+        if (title) {
+            item.title = title;
+        }
+        
+        if (address) {
+            item.address = address;
+        }
+        
+        if (latitude) {
+            item.latitude = latitude;
+        }
+        
+        if (longitude) {
+            item.longitude = longitude;
+        }
+        
+        if (imagePath) {
+            item.imagePath = imagePath;
+        }
+        
         NSError *error = nil;
         [context save:&error];
         if (error) {
