@@ -97,7 +97,7 @@ static NSString *const CellIdentifier = @"FavoritePlaceTableViewCell";
 
 }
 
-#pragma mark - UINavigationControllerDelegate methods
+#pragma mark - UINavigationControllerDelegate Methods
 
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
     
