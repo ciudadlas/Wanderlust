@@ -67,6 +67,15 @@ static NSString *const CellIdentifier = @"FavoritePlaceTableViewCell";
     self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
+- (void)configureCell:(FavoritePlaceTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    Place *place = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.placeTitle.text = place.title;
+    cell.placeAddress.text = place.address;
+    cell.placeImageView.image = nil;
+    
+    [cell.placeImageView setImageWithURL:place.imageDownloadURL placeholderImage:[UIImage imageNamed:@"favorites_placeholder"] fadeInWithDuration:0.3];
+}
+
 #pragma mark - Get Data Methods
 
 - (void)getData {
@@ -146,15 +155,6 @@ static NSString *const CellIdentifier = @"FavoritePlaceTableViewCell";
     [self configureCell:cell atIndexPath:indexPath];
     
     return cell;
-}
-
-- (void)configureCell:(FavoritePlaceTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    Place *place = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.placeTitle.text = place.title;
-    cell.placeAddress.text = place.address;
-    cell.placeImageView.image = nil;
-
-    [cell.placeImageView setImageWithURL:place.imageDownloadURL placeholderImage:[UIImage imageNamed:@"favorites_placeholder"] fadeInWithDuration:0.3];
 }
 
 @end
