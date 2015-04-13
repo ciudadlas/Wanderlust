@@ -20,4 +20,4 @@
 - After getting new places from the API, consider returning back all places that are stored in Core Data, as opposed to just the currently received ones (Wouldn't actually make a difference in this case since API always returns the same items.)
 - Improve favorites table view image loading by starting to load table view cell thumbnail images after table view stops scrolling.
 - Consider fetching API data little by little, instead of fetching it all at once
-- De-couple `Place` model from the `PlaceView` and re-write how we keep track of which model is being removed / favorited. `PlaceView` should have no reference to the model.
+- De-couple `Place` model from the `PlaceView` and re-write how we keep track of which model is being removed / favorited. `PlaceView` should have no reference to the model in an MVC architecture.
