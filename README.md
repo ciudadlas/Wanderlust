@@ -21,3 +21,4 @@
 - Improve favorites table view image loading by starting to load table view cell thumbnail images after table view stops scrolling.
 - Consider fetching API data little by little, instead of fetching it all at once
 - De-couple `Place` model from the `PlaceView` and re-write how we keep track of which model is being removed / favorited. `PlaceView` should have no reference to the model in an MVC architecture.
+- Make sure app handles the case where there are no more places to add to the view correctly
