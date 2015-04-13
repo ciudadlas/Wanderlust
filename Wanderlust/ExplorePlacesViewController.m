@@ -128,23 +128,29 @@
 }
 
 - (PannableCardView *)nextCardViewToShow:(CardsStackView *)stackView {
-    NSUInteger randomIndex = arc4random() % [self.places count];
-    Place *randomPlace = [self.places objectAtIndex:randomIndex];
     
-    PlaceView *newCardView = [[PlaceView alloc] initWithFrame:stackView.bounds];
-    newCardView.place = randomPlace;
-
-    UIImageView *leftOverlayView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nah_overlay"]];
-    leftOverlayView.center = CGPointMake(stackView.bounds.size.width / 2, stackView.bounds.size.height / 2);
-    leftOverlayView.layer.allowsEdgeAntialiasing = YES;
-    newCardView.leftSwipeOverlayView = leftOverlayView;
+    PlaceView *newCardView = nil;
     
-    UIImageView *rightOverlayView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"yea_overlay"]];
-    rightOverlayView.center = CGPointMake(stackView.bounds.size.width / 2, stackView.bounds.size.height / 2);
-    rightOverlayView.layer.allowsEdgeAntialiasing = YES;
-    newCardView.rightSwipeOverlayView = rightOverlayView;
-    
-    [newCardView.imageView setImageWithURL:randomPlace.imageDownloadURL placeholderImage:nil fadeInWithDuration:0.3];
+    if (self.places.count > 0) {
+        
+        NSUInteger randomIndex = arc4random() % [self.places count];        
+        Place *randomPlace = [self.places objectAtIndex:randomIndex];
+        
+        newCardView = [[PlaceView alloc] initWithFrame:stackView.bounds];
+        newCardView.place = randomPlace;
+        
+        UIImageView *leftOverlayView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nah_overlay"]];
+        leftOverlayView.center = CGPointMake(stackView.bounds.size.width / 2, stackView.bounds.size.height / 2);
+        leftOverlayView.layer.allowsEdgeAntialiasing = YES;
+        newCardView.leftSwipeOverlayView = leftOverlayView;
+        
+        UIImageView *rightOverlayView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"yea_overlay"]];
+        rightOverlayView.center = CGPointMake(stackView.bounds.size.width / 2, stackView.bounds.size.height / 2);
+        rightOverlayView.layer.allowsEdgeAntialiasing = YES;
+        newCardView.rightSwipeOverlayView = rightOverlayView;
+        
+        [newCardView.imageView setImageWithURL:randomPlace.imageDownloadURL placeholderImage:nil fadeInWithDuration:0.3];
+    }
     
     return newCardView;
 }
