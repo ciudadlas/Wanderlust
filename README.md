@@ -8,10 +8,10 @@
 - Supports iOS 8 and up.
 
 ## Features
-- Re-usable CardsStackView that holds a stack of cards, and allows right and left swiping. It can be customized with delegate methods and filled with data by any view controller via its dataSource and delegate objects. In this app it holds only max 5 card views at a time.
+- Re-usable CardsStackView that holds a stack of card views, and allows right and left swiping. It can be customized with delegate methods and filled with data by any object via its dataSource and delegate objects. In this app it holds a maximum of 5 card views at a time.
 - Single tapping on a card opens a map view with the coordinates and pin of the location shown on the map.
 - Swiping right on a card favorites it and swiping left discards it. Changes are persisted in a sqlite database via the iOS Core Data framework.
-- Tapping 'View Favorites' button opens up the list of favorite places that are persisted with a custom animation, and fetches the favorited places from the local data store.
+- Tapping 'View Favorites' button opens up the list of favorite places with a custom animation, and fetches the favorited places from the local data store.
 
 ## Future enhancements to consider
 - Allow user to un-favorite a place from the list of favorites.
